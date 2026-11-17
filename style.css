@@ -148,7 +148,7 @@ button {
   align-items: center;
   justify-content: space-between;
   gap: 8px;
-  padding: 9px 0;
+  padding: 11px 0 12px;
 }
 
 .brand {
@@ -738,28 +738,25 @@ button {
 
 .card-more summary,
 .aff-more summary {
+  display: block;
+  padding-left: 13px;
   color: var(--muted);
   font-size: 0.72rem;
   font-weight: 700;
   cursor: pointer;
   list-style: none;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath d='M3 1.5 6.5 5 3 8.5' fill='none' stroke='%232f6b57' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat left center;
+  background-size: 9px 9px;
+}
+
+.card-more[open] summary,
+.aff-more[open] summary {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath d='M1.5 3.5 5 7l3.5-3.5' fill='none' stroke='%232f6b57' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
 
 .card-more summary::-webkit-details-marker,
 .aff-more summary::-webkit-details-marker {
   display: none;
-}
-
-.card-more summary::before,
-.aff-more summary::before {
-  content: "＋ ";
-  color: var(--brand);
-  font-weight: 800;
-}
-
-.card-more[open] summary::before,
-.aff-more[open] summary::before {
-  content: "－ ";
 }
 
 .card-more p {
