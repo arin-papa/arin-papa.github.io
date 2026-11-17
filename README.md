@@ -72,6 +72,21 @@ site/
 
 버튼에는 `rel="sponsored noopener noreferrer"` 가 이미 붙어 있어 검색엔진 정책(유료 링크 표시)도 충족합니다. 필수 고지 문구(네이버 쇼핑 커넥트·쿠팡 파트너스)는 비교표 아래와 `privacy.html` 6항에 들어 있고, `validate_site.py` 가 두 문구가 빠지지 않았는지 매번 검사합니다.
 
+### 추천 쇼핑몰 섹션 — 애드픽
+
+`index.html` 의 `section#picks`(‘아린아빠 추천 쇼핑몰 · 제휴 혜택’)는 애드픽에서 발급받은 링크 3개를 카드로 보여 줍니다. 링크·수수료 조건 원본은 `affiliate/adpick-links-2026-11-17.md` 에 있습니다.
+
+| 카드 | 링크 | 성격 |
+| --- | --- | --- |
+| 보리보리 (유아동 전문몰) | `https://bitl.bz/r22LhM` | CPS · 구매 시 3% |
+| 애드픽 쇼핑메이트 | `https://deg.kr/521f142` | CPA · 무료 가입 |
+| 11번가 | `https://bitl.bz/tJc2fZ` | CPS · 최대 2.1% |
+
+- 버튼에는 `rel="sponsored noopener noreferrer"`, `target="_blank"` 를 붙입니다.
+- 애드픽 규정상 대가성 문구는 확정형이어야 합니다(“제공받을 수 있습니다” ✗). 표준 문구 **“저는 위 상품·서비스를 소개하면서 애드픽으로부터 수수료를 받습니다.”** 를 섹션 상단과 `privacy.html` 6항에 함께 두고, `validate_site.py` 가 검사합니다.
+- 링크를 바꾸거나 추가하면 `validate_site.py` 의 `ADPICK_LINKS` 와 `tools/test_dom.js` 의 링크 검사도 함께 고쳐 주세요.
+- 쿠팡 파트너스 링크는 이미 비교표에 있으므로 이 섹션에는 넣지 않았습니다(중복·혼선 방지).
+
 ## 4. 광고(애드센스) 넣기
 
 심사 신청 전에 꼭 해 둘 것:
@@ -102,7 +117,7 @@ site/
 ```bash
 python3 site/tools/validate_site.py               # HTML/CSS/JS 구조 + duktape 동작 검사
 <node> site/tools/test_site.js                    # Node 로 필터·검색·정렬·표시형식 32건
-<node> site/tools/test_dom.js                     # 가짜 DOM 으로 렌더·탭·모달 배선 27건
+<node> site/tools/test_dom.js                     # 가짜 DOM 으로 렌더·탭·모달·제휴 카드 배선 35건
 <node> site/tools/make-noscript.js                # 데이터를 고친 뒤 <noscript> 목록 재생성
 ```
 

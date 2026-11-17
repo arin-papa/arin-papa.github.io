@@ -1010,6 +1010,95 @@ button {
   }
 }
 
+/* ── 추천 쇼핑몰 (애드픽 제휴) ─────────────────────────── */
+
+.picks {
+  padding: 44px 0 10px;
+}
+
+.pick-label {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--brand-soft);
+  color: var(--brand-dark);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.pick-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.pick-card {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.pick-tag {
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.pick-card h3 {
+  margin-top: 4px;
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+.pick-desc {
+  margin-top: 8px;
+  color: var(--ink-soft);
+  font-size: 0.87rem;
+}
+
+.pick-meta {
+  margin-top: 10px;
+  margin-bottom: 14px;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.pick-btn {
+  margin-top: auto;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: var(--brand);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.pick-btn:hover {
+  background: var(--brand-dark);
+  text-decoration: none;
+}
+
+@media (min-width: 640px) {
+  .pick-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 860px) {
+  .pick-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 /* ── 플랫폼 · FAQ ───────────────────────────────────────── */
 
 .platforms {
@@ -1392,7 +1481,8 @@ body.modal-open {
   .site-footer,
   .modal,
   .go,
-  .aff-btn {
+  .aff-btn,
+  .pick-btn {
     display: none !important;
   }
 
