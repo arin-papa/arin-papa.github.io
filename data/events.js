@@ -1,13 +1,14 @@
 /*!
  * 아린아빠 혜택노트 — 목록 데이터
- * 최종 확인일: 2026-11-17 (대한민국 기준)
+ * 최종 확인일: 2026-11-17 (대한민국 기준) / 무료혜택 38건 · 육아템 13종
  *
  * 원칙
  *  - 참가비·제품비·배송비를 신청자가 부담하지 않는 항목만 담습니다.
  *  - 마감일은 주관처 공고에 적힌 날짜를 그대로 옮겼습니다. 시각 표기가 없으면 당일 24시 마감입니다.
- *  - verified: false 는 공고 원문이 아닌 공유 자료로 확인한 항목입니다(카드에 '공유 정보·재확인' 표시).
+ *  - verified: false 는 공고 원문이 아닌 공유 자료로 확인한 항목입니다(카드에 '공유 정보' 표시).
+ *  - target 은 참여 대상이 좁혀진 항목의 1줄 조건입니다.
  *  - affiliates 의 url 은 네이버 쇼핑커넥트(아린이네 크리에이터 스페이스) 발급 링크,
- *    coupangUrl 은 쿠팡 파트너스 발급 링크입니다(두 버튼이 비교표에 나란히 표시됨).
+ *    coupangUrl 은 쿠팡 파트너스 발급 링크입니다(기존 5종은 두 버튼이 함께 표시됨).
  */
 (function (root) {
   "use strict";
@@ -24,7 +25,6 @@
     ],
 
     events: [
-      /* ── 육아·6개월 ─────────────────────────────────────────── */
       {
         id: "baby-torybox",
         cat: "baby",
@@ -49,6 +49,7 @@
         host: "베베숲",
         benefit: "베베숲·그레이트북스·벨레다·브리스틱·앱솔루트·베베쿡·므므브 제품 한 상자 · 추첨 증정",
         condition: "예비맘·출산맘 대상, 0원. 회원가입 + 출생 증빙(가족관계증명서 등) 첨부 필요",
+        target: "예비맘·출산맘 (출생 증빙 필요)",
         deadline: "2026-11-20",
         announce: "매월 1~20일 진행 · 발표는 사이트 공지",
         url: "https://www.bebesup.co.kr/proc/heartbox",
@@ -59,8 +60,6 @@
         posted: "2026-11-01",
         tip: "매달 1일부터 20일까지만 열립니다. 계정 명의와 출생 증빙의 이름이 같아야 하니 부모 명의로 준비하세요."
       },
-
-      /* ── 배송형 체험단 ─────────────────────────────────────── */
       {
         id: "delivery-maaxpert",
         cat: "delivery",
@@ -163,8 +162,6 @@
         posted: "2026-11-17",
         tip: "의류는 사이즈 선택 항목이 있어 신청 전에 실측 표를 확인해 두면 선정 후 교환이 줄어듭니다."
       },
-
-      /* ── 설문·기프티콘 ─────────────────────────────────────── */
       {
         id: "survey-lofin",
         cat: "survey",
@@ -172,6 +169,7 @@
         host: "행정안전부 지방재정365",
         benefit: "편의점 모바일상품권 1만 원권 · 100명 추첨",
         condition: "국민·학계·연구기관 등 지방재정365 이용자, 24문항",
+        target: "지방재정365 이용자",
         deadline: "2026-11-17",
         announce: "발표일 폼 미기재",
         url: "https://www.lofin365.go.kr/lf/prtlCom/etcFunc/mainsrnSvi/retvMainsrnQsivPpupView.do",
@@ -369,8 +367,6 @@
         posted: "2026-11-16",
         tip: "방문한 적이 없으면 ‘방문한 적 없음’으로 사실대로 답하면 됩니다. 첫 방문자도 응모 대상입니다."
       },
-
-      /* ── 공모전 ───────────────────────────────────────────── */
       {
         id: "contest-column",
         cat: "contest",
@@ -421,16 +417,281 @@
         verified: true,
         posted: "2026-10-12",
         tip: "참가상이 10점(각 5만 원)이라 완성도보다 ‘일단 내는 것’이 남는 구조입니다. AI 시나리오는 단편(60분 미만)이면 됩니다."
+      },
+      {
+        id: "survey-bojo-portal",
+        cat: "survey",
+        title: "보조금통합포털 만족도 설문조사",
+        host: "보조금통합포털(기획재정부·한국재정정보원)",
+        benefit: "모바일 기프티콘 1만원 상당 · 50명 추첨",
+        condition: "0원. 네이버폼 설문 응답(3~5분) · 포털 사용자 대상, 개인정보 동의 후 제출",
+        target: "보조금통합포털 사용자",
+        deadline: "2026-11-30",
+        announce: "발표 12/2 · 경품은 발표 다음 날부터 순차 발송",
+        url: "https://naver.me/xvCODXOE",
+        urlLabel: "설문 참여하기",
+        source: "보조금통합포털 공지(bojo.go.kr)",
+        checked: "2026-11-17",
+        verified: true,
+        posted: "2026-11-17",
+        tip: "보조금24에서 지원금 조회를 한 번 해보고 답하면 문항이 자연스럽습니다."
+      },
+      {
+        id: "survey-danuri",
+        cat: "survey",
+        title: "다누리포털·한국생활안내 만족도 조사",
+        host: "한국건강가정진흥원",
+        benefit: "백화점 상품권 10만원 · 치킨 기프티콘 2만원 · 편의점 금액권 5천원 (총 122명)",
+        condition: "0원. 구글폼 설문 제출 · 누구나 참여 가능(가입 불필요)",
+        deadline: "2026-11-23",
+        announce: "발표 11월 4주 · 다누리포털 공지",
+        url: "https://forms.gle/ve2ZQSUqmarnacfN8",
+        urlLabel: "설문 참여하기",
+        source: "다누리포털 기관소식(liveinkorea.kr)",
+        checked: "2026-11-17",
+        verified: true,
+        posted: "2026-11-17",
+        tip: "당첨 인원 122명으로 확률이 높은 편입니다. 경품이 3종이라 문항에 응답만 하면 자동 응모됩니다."
+      },
+      {
+        id: "survey-culture-bigdata",
+        cat: "survey",
+        title: "문화빅데이터 플랫폼 이용자 만족도 조사",
+        host: "한국문화정보원",
+        benefit: "모바일 기프티콘 5,000원 상당 · 200명 추첨",
+        condition: "0원. 구글폼 설문(3~5분) + 플랫폼 아이디·휴대전화 입력 · 플랫폼 회원(무료 가입) 대상",
+        target: "플랫폼 무료 회원",
+        deadline: "2026-11-23",
+        announce: "발표 11-30 · 플랫폼 공지사항",
+        url: "https://forms.gle/qtry5sDFEmtrSbMZ8",
+        urlLabel: "설문 참여하기",
+        source: "문화빅데이터 플랫폼 이벤트(bigdata-culture.kr)",
+        checked: "2026-11-17",
+        verified: true,
+        posted: "2026-11-17",
+        tip: "플랫폼 무료 회원가입 후 아이디를 정확히 입력해야 추첨 대상이 됩니다. 200명 추첨이라 기대값이 좋습니다."
+      },
+      {
+        id: "survey-liveseoul",
+        cat: "survey",
+        title: "2026년 라이브서울 만족도 조사",
+        host: "서울특별시",
+        benefit: "스타벅스 아메리카노 기프티콘 · 100명 추첨",
+        condition: "0원. 네이버폼 설문 제출 · 라이브서울 이용자 및 시민 누구나",
+        target: "라이브서울 시청자·시민",
+        deadline: "2026-11-22",
+        announce: "발표 11-26 · 라이브서울 누리집",
+        url: "https://naver.me/xxonvx3v",
+        urlLabel: "설문 참여하기",
+        source: "서울시 내 손안에 서울 이벤트(mediahub.seoul.go.kr)",
+        checked: "2026-11-17",
+        verified: true,
+        posted: "2026-11-17",
+        tip: "라이브서울(tv.seoul.go.kr)을 한 번 열어본 뒤 응답하면 사실대로 답할 수 있습니다."
+      },
+      {
+        id: "survey-busan-simin",
+        cat: "survey",
+        title: "부산 시민열린마루 홈페이지 개선의견 이벤트",
+        host: "부산광역시",
+        benefit: "동백전 정책지원금 2만원 · 20명 추첨",
+        condition: "0원. 구글폼에 개선의견 작성·제출 · 시정에 관심 있는 시민 누구나",
+        target: "부산 시민",
+        deadline: "2026-12-04",
+        announce: "부산시 공지사항",
+        url: "https://forms.gle/d4qEg4VeLMq3tfbU6",
+        urlLabel: "의견 작성하기",
+        source: "부산광역시 통합 공지사항(busan.go.kr)",
+        checked: "2026-11-17",
+        verified: true,
+        posted: "2026-11-17",
+        tip: "같은 기간 '시민생각'에 정책 아이디어를 올리면 편의점 상품권 1만원(50명) 이벤트에도 함께 응모됩니다."
+      },
+      {
+        id: "survey-goyang-pick",
+        cat: "survey",
+        title: "고양소식·고양원픽 독자 만족도 조사",
+        host: "고양특례시",
+        benefit: "모바일 상품권 2만원 상당 · 125명 추첨",
+        condition: "0원. 고양원픽 누리집에서 12문항 온라인 설문 · 소식지를 한 번이라도 읽은 사람 누구나",
+        target: "고양원픽 소식지 열람자",
+        deadline: "2026-11-29",
+        announce: "시 공지 · 개별 안내",
+        url: "https://www.gy1pick.kr",
+        urlLabel: "고양원픽 열기",
+        source: "고양특례시 보도자료 / 고양원픽 누리집",
+        checked: "2026-11-17",
+        verified: true,
+        posted: "2026-11-17",
+        tip: "1인당 2만원으로 이번 목록에서 단가가 가장 높습니다. 고양 거주가 아니어도 '읽어본 사람'이 대상입니다."
+      },
+      {
+        id: "survey-gangwon-tongil",
+        cat: "survey",
+        title: "2026 연말 결산 & 2027 프로그램 설문조사",
+        host: "강원권통일플러스센터",
+        benefit: "다이소 모바일 상품권 5,000원 · 40명 추첨",
+        condition: "0원. 구글폼에 2026년 프로그램 의견·2027년 아이디어 작성 · 누구나",
+        deadline: "2026-11-22",
+        announce: "발표 11-24",
+        url: "https://forms.gle/Fsh6T6zqCejpZkdn7",
+        urlLabel: "설문 참여하기",
+        source: "주최 측 게시물 정리(콘테스트코리아) — 응모 전 원문 재확인",
+        checked: "2026-11-17",
+        verified: false,
+        posted: "2026-11-17",
+        tip: "주관 기관 프로그램을 한 번 둘러보고 아이디어를 적으면 정성 응답으로 인정될 가능성이 큽니다."
+      },
+      {
+        id: "survey-naacc",
+        cat: "survey",
+        title: "2026 만족도 이벤트",
+        host: "행정중심복합도시건설청",
+        benefit: "BBQ 황금올리브치킨+콜라(20명) · 네이버페이 1만원(10명) · 투썸 아메리카노(100명)",
+        condition: "0원. 누리집 이벤트 배너·포스터 QR → 설문(정성 의견 작성 시 상위 경품 대상)",
+        deadline: "2026-11-22",
+        announce: "발표 11-27",
+        url: "https://www.naacc.go.kr",
+        urlLabel: "누리집 열기",
+        source: "픽모아 이벤트 공고 — 설문 폼 직링크 미확보",
+        checked: "2026-11-17",
+        verified: false,
+        posted: "2026-11-17",
+        tip: "설문만 해도 투썸 100명, 정성 의견을 쓰면 BBQ·네이버페이까지 노릴 수 있습니다."
+      },
+      {
+        id: "survey-nhis-healthmoa",
+        cat: "survey",
+        title: "건강모아 서비스 만족도 조사 이벤트",
+        host: "국민건강보험공단",
+        benefit: "GS25 모바일상품권 1만원 · 250명 추첨",
+        condition: "0원. 공단 누리집 배너 또는 건강모아 앱 이벤트 → 설문 · 건강모아 이용자 대상, 1인 1회",
+        target: "건강모아 이용자",
+        deadline: "2026-11-29",
+        announce: "발표 12-7 · 앱·누리집 공지",
+        url: "https://www.nhis.or.kr",
+        urlLabel: "공단 누리집 열기",
+        source: "보건복지부 국민참여이벤트(mohw.go.kr)",
+        checked: "2026-11-17",
+        verified: true,
+        posted: "2026-11-17",
+        tip: "이번 목록에서 당첨 인원이 가장 많습니다(250명). 건강모아에서 건강검진·건강정보를 한 번 조회한 뒤 응답하세요."
+      },
+      {
+        id: "survey-pps-sns",
+        cat: "survey",
+        title: "하반기 누리소통망(SNS) 만족도 조사",
+        host: "조달청",
+        benefit: "네이버페이 포인트 1만원 · 50명 추첨",
+        condition: "0원. 조달청 누리집 이벤트 배너 → 설문 응답",
+        deadline: "2026-11-18",
+        announce: "발표 11-25",
+        url: "https://www.pps.go.kr",
+        urlLabel: "누리집 열기",
+        source: "픽모아·슈퍼투데이 공고 — 폼 직링크 미확보",
+        checked: "2026-11-17",
+        verified: false,
+        posted: "2026-11-17",
+        tip: "내일(11/18) 마감입니다. 오늘 안에 응모하는 편이 안전합니다."
+      },
+      {
+        id: "survey-ansan",
+        cat: "survey",
+        title: "2026 설문 이벤트",
+        host: "안산시",
+        benefit: "투썸플레이스 소금 프레첼 베이글 + 아메리카노 · 100명 추첨",
+        condition: "0원. 안산시 누리집 이벤트 배너 → 설문",
+        deadline: "2026-11-20",
+        announce: "발표 11-26",
+        url: "https://www.ansan.go.kr",
+        urlLabel: "누리집 열기",
+        source: "픽모아 이벤트 공고",
+        checked: "2026-11-17",
+        verified: false,
+        posted: "2026-11-17",
+        tip: "경품이 베이글 세트로 실물에 가깝습니다(100명)."
+      },
+      {
+        id: "survey-gwangyang-job",
+        cat: "survey",
+        title: "굿잡광양 서비스 만족도 조사",
+        host: "광양시",
+        benefit: "케이크 모바일 쿠폰 6,800원 상당 · 100명 추첨",
+        condition: "0원. 굿잡광양 누리집 온라인 설문 · 회원가입자 대상",
+        target: "굿잡광양 회원",
+        deadline: "2026-12-02",
+        announce: "발표 12-9 · 굿잡광양 공지사항",
+        url: "https://job.gwangyang.go.kr",
+        urlLabel: "굿잡광양 열기",
+        source: "광양시 보도자료(뉴스1·파이낸셜뉴스)",
+        checked: "2026-11-17",
+        verified: true,
+        posted: "2026-11-17",
+        tip: "무료 회원가입 후 구인정보를 한 번 검색하고 응답하면 됩니다."
+      },
+      {
+        id: "survey-haman-policy",
+        cat: "survey",
+        title: "2026 함안을 빛낸 으뜸 정책 10선 설문",
+        host: "함안군",
+        benefit: "함안사랑상품권 1만원 · 100명 추첨",
+        condition: "0원. 함안군 누리집 온라인 설문(15개 사업 중 선택) · 함안 군민 대상",
+        target: "함안 군민",
+        deadline: "2026-11-27",
+        announce: "군 누리집·SNS 공개",
+        url: "https://www.haman.go.kr",
+        urlLabel: "누리집 열기",
+        source: "뉴스핌 보도(2026-11-16)",
+        checked: "2026-11-17",
+        verified: true,
+        posted: "2026-11-17",
+        tip: "거주 지역 제한(함안 군민)이 있어 다른 지역 거주자는 참고용입니다."
+      },
+      {
+        id: "survey-daegu-bukgu",
+        cat: "survey",
+        title: "SNS 만족도 조사",
+        host: "대구광역시 북구청",
+        benefit: "맘스터치 싸이버거 세트 · 50명 추첨",
+        condition: "0원. 네이버폼 설문 응답 — SNS 구독·인증샷 조건 여부는 원문 확인 필요",
+        target: "SNS 구독 조건 여부 확인 필요",
+        deadline: "2026-11-24",
+        announce: "발표 11-26",
+        url: "https://naver.me/5vJ9wBGB",
+        urlLabel: "설문 참여하기",
+        source: "쌀먹닷컴 공유 정보 — 원문 재확인 필요",
+        checked: "2026-11-17",
+        verified: false,
+        posted: "2026-11-17",
+        tip: "SNS 구독과 인증샷 첨부가 조건인 경우가 많습니다. 폼 첫 화면에서 조건을 먼저 확인하세요."
+      },
+      {
+        id: "survey-csi-kalit",
+        cat: "survey",
+        title: "건축분쟁전문위원회 종합관리시스템 만족도 조사",
+        host: "국토안전관리원",
+        benefit: "모바일 기프티콘 · 100명 추첨",
+        condition: "0원. csi.go.kr 공지에서 설문 링크를 열어 응답",
+        deadline: "2026-11-20",
+        announce: "발표 11-25",
+        url: "https://www.csi.go.kr",
+        urlLabel: "누리집 열기",
+        source: "모아득 공유 정보 — 원문 재확인 필요",
+        checked: "2026-11-17",
+        verified: false,
+        posted: "2026-11-17",
+        tip: "설문 폼 직링크가 공지 안에 있습니다. 배너가 보이지 않으면 공지사항에서 '만족도'를 검색하세요."
       }
     ],
 
-    /* 육아템 비교표 — url 에 제휴 링크를 넣으면 ‘구매’ 칸에 버튼이 생깁니다. */
     affiliates: [
       {
         key: "humidifier",
         name: "스텐 가열식 가습기",
+        product: "스텐 가열식 가습기",
+        store: "쿠팡·네이버",
         thumb: "assets/prod-humidifier.webp",
-        why: "이유식과 분유를 먹고 잠자리가 길어지는 시기, 방 습도를 40~60%로 유지하는 데 씁니다. 가열식은 물을 끓여 수증기를 만듭니다.",
+        point: "가열식으로 물을 끓여 습도 40~60% 유지",
         check: "스텐 용기인지, 연속 가열 시간, 세척구 넓이, 취침 모드 소음, 자동 건조 기능",
         price: "8만~20만 원",
         url: "https://naver.me/FmGLv04V",
@@ -439,8 +700,10 @@
       {
         key: "cooler-bag",
         name: "이유식 보냉가방",
+        product: "이유식 보냉가방",
+        store: "네이버",
         thumb: "assets/prod-coolerbag.webp",
-        why: "이유식 2팩 이상을 들고 외출하거나 친정·어린이집에 맡길 때 온도를 유지합니다.",
+        point: "이유식 2팩 이상 외출할 때 온도 유지",
         check: "단열재 두께, 젤팩 포함 여부, 세척 가능한 내피, 차량용 12V 지원",
         price: "1만~4만 원",
         url: "https://naver.me/Fx2HyeOM",
@@ -449,8 +712,10 @@
       {
         key: "cube",
         name: "이유식 큐브·용기 세트",
+        product: "이유식 큐브·용기 세트",
+        store: "네이버",
         thumb: "assets/prod-cube.webp",
-        why: "중기 이유식은 한 번에 지어 소분해 두는 방식이 편합니다. 30ml 단위 큐브가 초기·중기 전환에 맞습니다.",
+        point: "중기 이유식 소분, 30ml 큐브가 딱 맞음",
         check: "전자레인지·식세기 사용 가능 여부, 뚜껑 밀폐력, 용량 단위, 식품용 소재 표기",
         price: "1만~3만 원",
         url: "https://naver.me/F8lgwpQc",
@@ -459,8 +724,10 @@
       {
         key: "tights",
         name: "아기 타이즈·수면조끼",
+        product: "아기 타이즈·수면조끼",
+        store: "네이버",
         thumb: "assets/prod-sleepvest.webp",
-        why: "배냇저고리를 졸업하는 시기, 기저귀를 갈기 쉬우면서 배는 따뜻하게 유지하는 옷입니다.",
+        point: "기저귀 갈기 쉽고 배는 따뜻하게",
         check: "목·발목 고무 밴드 압박, 오가닉·무형광 소재, 세탁 후 줄어듦, 한 치수 여유",
         price: "1만~3만 원",
         url: "https://naver.me/5vJj26r1",
@@ -469,12 +736,110 @@
       {
         key: "diaper",
         name: "기저귀 3단계(밴드형)",
+        product: "기저귀 3단계(밴드형)",
+        store: "쿠팡·네이버",
         thumb: "assets/prod-diaper.webp",
-        why: "6~9kg 구간에 맞춰지는 단계입니다. 밤 수면이 길어지며 흡수량 차이가 크게 드러납니다.",
+        point: "6~9kg 구간, 밤 10시간 흡수량이 갈림",
         check: "밤 10시간 흡수량, 밴드 늘어남·자국, 등·허벅지 샘 방지, 박스당 장수",
         price: "3만~5만 원(1박스)",
         url: "https://naver.me/5397G3T4",
         coupangUrl: "https://link.coupang.com/a/iJ9DTpTw1Q"
+      },
+      {
+        key: "aff-wipes",
+        name: "아기 물티슈 10팩",
+        product: "페넬로페 물티슈 프리미엄 아기물티슈 본보야지 에펠 캡형 70매 10팩",
+        store: "페넬로페",
+        thumb: "assets/prod-wipes.webp",
+        point: "70매×10팩, 리뷰 2만 건대 소모품",
+        check: "장당 단가, 캡형 밀폐력, 무향·저자극 표기, 유통기한",
+        price: "21,900원",
+        reviews: 20616,
+        url: "https://naver.me/GO60d0oN"
+      },
+      {
+        key: "aff-cleanser",
+        name: "젖병 세정제·주방세제",
+        product: "우리가족 주방세제 과일 채소용세척 젖병세척 세트구성 500ml 2개구성",
+        store: "엄마랑아기랑",
+        thumb: "assets/prod-cleanser.webp",
+        point: "젖병·과일·채소까지, 500ml 2개",
+        check: "식품용 세정제 표기, 헹굼 잔여감, 리필 구성",
+        price: "10,000원",
+        reviews: 418,
+        url: "https://naver.me/FmGL1Soi"
+      },
+      {
+        key: "aff-detergent",
+        name: "아기 세탁세제",
+        product: "아이앤어스 신생아&온가족 민감성용 프리미엄 캡슐세제 올인원 고농축 48개입",
+        store: "아이앤어스",
+        thumb: "assets/prod-detergent.webp",
+        point: "신생아 민감성용 캡슐 48개입",
+        check: "캡슐 1개 세탁량, 무형광·저자극 표기, 향",
+        price: "28,900원",
+        reviews: 197,
+        url: "https://naver.me/Fhu7COLm"
+      },
+      {
+        key: "aff-starter",
+        name: "이유식 스타트 6종 세트",
+        product: "베베락 엘파 이유식 스타트 6종 세트 빨대컵 용기 흡착볼 스낵캡 스푼",
+        store: "베베락",
+        thumb: "assets/prod-starter.webp",
+        point: "빨대컵·흡착볼·스낵캡·스푼 6종",
+        check: "BPA-free 표기, 식세기·전자레인지 가능, 흡착력",
+        price: "39,000원",
+        reviews: 80,
+        url: "https://naver.me/xCjoWJ9N"
+      },
+      {
+        key: "aff-aspirator",
+        name: "전동 콧물흡입기",
+        product: "베베노 무선 전동식 의료용 아기 콧물흡입기",
+        store: "베베노",
+        thumb: "assets/prod-aspirator.webp",
+        point: "무선 전동식, 환절기 콧물 대비",
+        check: "흡입 단계, 소음, 세척 부품 분리, 의료기기 허가",
+        price: "229,000원",
+        reviews: 3106,
+        url: "https://naver.me/xcg3h8lY"
+      },
+      {
+        key: "aff-bib",
+        name: "이유식 턱받이",
+        product: "몽키버니 아기 이유식 턱받이 실리콘 자기주도 방수 휴대용 어린이집",
+        store: "몽키버니",
+        thumb: "assets/prod-bib.webp",
+        point: "실리콘 방수, 씻어서 재사용",
+        check: "목 밴드 조절, 턱받이 깊이, 식세기 사용 가능",
+        price: "12,900원",
+        reviews: 1169,
+        url: "https://naver.me/xSBiqXJK"
+      },
+      {
+        key: "aff-thermometer",
+        name: "비접촉 체온계",
+        product: "예꼬맘 비접촉 체온계 NT61 아기 유아 보관케이스",
+        store: "예꼬맘",
+        thumb: "assets/prod-thermometer.webp",
+        point: "비접촉 NT61, 보관 케이스 포함",
+        check: "측정 오차, 야간 모드, 케이스 포함",
+        price: "52,500원",
+        reviews: 49,
+        url: "https://naver.me/GdT0etIi"
+      },
+      {
+        key: "aff-bottle",
+        name: "PPSU 젖병 2개",
+        product: "닥터브라운 오피셜 / PPSU 젖병 와이드넥 150ml 2개, 꼭지 선택 / 치발기 옵션선물",
+        store: "닥터브라운",
+        thumb: "assets/prod-bottle.webp",
+        point: "PPSU 와이드넥 150ml 2개",
+        check: "PPSU 소재, 꼭지 단계 선택, 열탕 소독 가능",
+        price: "51,800원",
+        reviews: 2241,
+        url: "https://naver.me/xy73KmMJ"
       }
     ]
   };

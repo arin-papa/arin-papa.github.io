@@ -1,6 +1,6 @@
 /*!
  * 아린아빠 혜택노트 — app.js
- * 목록 렌더링 · 필터 · 검색 · 정렬 · 안내 모달
+ * 보기 탭(무료혜택·육아템·추천 쇼핑몰) · 실시간 검색 · 카테고리 필터 · 마감순 정렬 · 안내 모달
  * 외부 라이브러리 없이 동작합니다.
  */
 (function (global) {
@@ -75,7 +75,17 @@
     return "is-normal";
   }
 
-  /* ── 카테고리 · 검색 · 정렬 ───────────────────────────────── */
+  /* ── 공통 ───────────────────────────────────────────────── */
+
+  function esc(value) {
+    return String(value === null || value === undefined ? "" : value).replace(/[&<>"']/g, function (ch) {
+      if (ch === "&") { return "&amp;"; }
+      if (ch === "<") { return "&lt;"; }
+      if (ch === ">") { return "&gt;"; }
+      if (ch === '"') { return "&quot;"; }
+      return "&#39;";
+    });
+  }
 
   function categoryLabel(id) {
     var list = (DATA && DATA.categories) || [];
@@ -87,7 +97,7 @@
 
   function searchText(item) {
     return [
-      item.title, item.host, item.benefit, item.condition,
+      item.title, item.host, item.benefit, item.condition, item.target,
       item.tip, item.source, categoryLabel(item.cat)
     ].join(" ").toLowerCase();
   }
@@ -128,31 +138,90 @@
     return list;
   }
 
-  /* 카테고리별 썸네일 — 직접 만든 AI 일러스트(타 사이트 사진 사용 없음). */
-  var CAT_MEDIA = {
-    baby: {
-      src: "assets/cat-baby.webp",
-      alt: "육아·6개월 혜택 일러스트 — 아기 용품이 담긴 바구니"
-    },
-    survey: {
-      src: "assets/cat-survey.webp",
-      alt: "설문·기프티콘 혜택 일러스트 — 설문 화면과 기프티콘 카드"
-    },
-    delivery: {
-      src: "assets/cat-delivery.webp",
-      alt: "배송형 체험단 일러스트 — 문 앞에 놓인 택배 상자"
-    },
-    contest: {
-      src: "assets/cat-contest.webp",
-      alt: "공모전 일러스트 — 트로피와 연필, 아이디어 전구"
-    }
-  };
+  /** 육아템 13종 검색 필터 (이름·핵심 포인트·체크포인트·판매처). */
+  function filterAffiliates(items, query) {
+    var q = String(query || "").trim().toLowerCase();
+    if (!q) { return items.slice(); }
+    return items.filter(function (item) {
+      return [item.name, item.product, item.point, item.check, item.store]
+        .join(" ").toLowerCase().indexOf(q) !== -1;
+    });
+  }
 
-  function mediaHtml(item) {
-    var media = CAT_MEDIA[item.cat];
-    if (!media) { return ""; }
-    return '<figure class="card-media"><img src="' + esc(media.src) + '" alt="' +
-      esc(media.alt) + '" width="800" height="450" loading="lazy" decoding="async"></figure>';
+  /* ── 카드 ───────────────────────────────────────────────── */
+
+  function cardHtml(item, now) {
+    var n = daysLeft(item.deadline, now);
+    var expired = isExpired(item.deadline, now);
+    var parts = [];
+    parts.push('<article class="card card--' + esc(item.cat) + (expired ? " is-expired" : "") +
+      '" data-id="' + esc(item.id) + '" data-cat="' + esc(item.cat) + '">');
+    parts.push('<div class="card-top">');
+    parts.push('<span class="badge badge--' + esc(item.cat) + '">' + esc(categoryLabel(item.cat)) + "</span>");
+    parts.push('<span class="dday ' + ddayClass(n, expired) + '">' + esc(ddayLabel(n)) + "</span>");
+    parts.push("</div>");
+    parts.push('<h3 class="card-title">' + esc(item.title) + "</h3>");
+    parts.push('<p class="card-host">' + esc(item.host) +
+      (item.verified ? "" : ' <span class="flag">공유 정보</span>') + "</p>");
+    parts.push('<p class="card-benefit">' + esc(item.benefit) + "</p>");
+    if (item.target) {
+      parts.push('<p class="card-target"><span class="target-key">대상</span>' + esc(item.target) + "</p>");
+    }
+    parts.push('<div class="card-foot">');
+    parts.push('<span class="card-deadline">마감 <strong>' + esc(formatDeadline(item.deadline, now)) + "</strong></span>");
+    parts.push('<a class="go" href="' + esc(item.url) + '" target="_blank" rel="noopener noreferrer">' +
+      esc(item.urlLabel || "신청하기") +
+      ' <span aria-hidden="true">↗</span><span class="sr-only">(새 창)</span></a>');
+    parts.push("</div>");
+    parts.push('<details class="card-more"><summary>조건·팁</summary>');
+    parts.push('<p><span class="k">조건</span>' + esc(item.condition) + "</p>");
+    if (item.announce) {
+      parts.push('<p><span class="k">발표</span>' + esc(item.announce) + "</p>");
+    }
+    parts.push('<p><span class="k">팁</span>' + esc(item.tip) + "</p>");
+    parts.push('<p class="card-src">출처 ' + esc(item.source) + " · 확인 " + esc(item.checked) + "</p>");
+    if (!item.verified) {
+      parts.push('<p class="card-warn">공유 자료로 확인한 항목입니다. 참여 전 주최 페이지에서 마감일과 참여 조건을 다시 확인하세요.</p>');
+    }
+    parts.push("</details></article>");
+    return parts.join("");
+  }
+
+  function affiliateCardHtml(item) {
+    var links = [];
+    if (item.url) {
+      links.push('<a class="aff-btn" href="' + esc(item.url) +
+        '" target="_blank" rel="sponsored noopener noreferrer">네이버 <span aria-hidden="true">↗</span>' +
+        '<span class="sr-only">(새 창 · 제휴 링크)</span></a>');
+    }
+    if (item.coupangUrl) {
+      links.push('<a class="aff-btn aff-btn--coupang" href="' + esc(item.coupangUrl) +
+        '" target="_blank" rel="sponsored noopener noreferrer">쿠팡 <span aria-hidden="true">↗</span>' +
+        '<span class="sr-only">(새 창 · 제휴 링크)</span></a>');
+    }
+    var meta = [];
+    if (item.reviews) {
+      meta.push('<span class="aff-reviews">리뷰 ' + esc(item.reviews.toLocaleString("en-US")) + "</span>");
+    }
+    if (item.store) {
+      meta.push('<span class="aff-store">' + esc(item.store) + "</span>");
+    }
+    return '<article class="aff-card" data-key="' + esc(item.key) + '">' +
+      '<div class="aff-media">' +
+      '<img class="aff-thumb" src="' + esc(item.thumb) + '" alt="' + esc(item.name) +
+      ' 상품 이미지" width="96" height="96" loading="lazy" decoding="async">' +
+      "</div>" +
+      '<div class="aff-body">' +
+      '<h3 class="aff-name">' + esc(item.name) + "</h3>" +
+      '<p class="aff-point">' + esc(item.point) + "</p>" +
+      '<p class="aff-price">' + esc(item.price) + (meta.length ? " " + meta.join(" ") : "") + "</p>" +
+      '<div class="aff-links">' + links.join("") + "</div>" +
+      '<details class="aff-more"><summary>고를 때 체크</summary>' +
+      "<p>" + esc(item.check) + "</p>" +
+      (item.product && item.product !== item.name
+        ? '<p class="aff-product">상품명 ' + esc(item.product) + "</p>" : "") +
+      "</details>" +
+      "</div></article>";
   }
 
   var api = {
@@ -162,13 +231,11 @@
     formatDeadline: formatDeadline,
     ddayLabel: ddayLabel,
     filterAndSort: filterAndSort,
+    filterAffiliates: filterAffiliates,
     categoryLabel: categoryLabel,
-    CAT_MEDIA: CAT_MEDIA,
-    /* 아래 세 함수는 정적 미리렌더·검증용으로도 쓸 수 있게 함께 내보냅니다. */
     esc: esc,
-    mediaHtml: mediaHtml,
     cardHtml: cardHtml,
-    affiliateRowHtml: affiliateRowHtml
+    affiliateCardHtml: affiliateCardHtml
   };
   if (typeof module !== "undefined" && module.exports) {
     module.exports = api;
@@ -176,12 +243,13 @@
   global.HYENOTE_API = api;
   if (typeof document === "undefined") { return; }
 
-  /* ── 렌더링 ─────────────────────────────────────────────── */
+  /* ── 화면 상태 ──────────────────────────────────────────── */
 
-  var state = { category: "all", sort: "deadline", query: "", showExpired: false };
+  var state = { view: "events", category: "all", sort: "deadline", query: "", showExpired: false };
   var grid = document.getElementById("eventGrid");
   if (!DATA || !grid) { return; }
 
+  var viewTabs = document.getElementById("viewTabs");
   var tabsEl = document.getElementById("tabs");
   var searchEl = document.getElementById("search");
   var sortEl = document.getElementById("sort");
@@ -191,45 +259,17 @@
   var resetEl = document.getElementById("resetFilters");
   var affiliateBody = document.getElementById("affiliateBody");
   var staleEl = document.getElementById("staleNotice");
+  var filtersEl = document.getElementById("eventsFilters");
+  var sortField = document.getElementById("sortField");
+  var listNote = document.getElementById("listNote");
+  var panels = Array.prototype.slice.call(document.querySelectorAll("[data-view-panel]"));
+  var searchWrap = searchEl ? searchEl.closest(".search-field") : null;
 
-  function esc(value) {
-    return String(value === null || value === undefined ? "" : value).replace(/[&<>"']/g, function (ch) {
-      if (ch === "&") { return "&amp;"; }
-      if (ch === "<") { return "&lt;"; }
-      if (ch === ">") { return "&gt;"; }
-      if (ch === '"') { return "&quot;"; }
-      return "&#39;";
-    });
-  }
-
-  function cardHtml(item, now) {
-    var n = daysLeft(item.deadline, now);
-    var expired = isExpired(item.deadline, now);
-    var parts = [];
-    parts.push('<article class="card' + (expired ? " is-expired" : "") + '" data-id="' + esc(item.id) + '">');
-    parts.push(mediaHtml(item));
-    parts.push('<div class="card-top">');
-    parts.push('<span class="badge badge--' + esc(item.cat) + '">' + esc(categoryLabel(item.cat)) + "</span>");
-    parts.push('<span class="dday ' + ddayClass(n, expired) + '">' + esc(ddayLabel(n)) + "</span>");
-    parts.push("</div>");
-    parts.push('<h3 class="card-title">' + esc(item.title) + "</h3>");
-    parts.push('<p class="card-host">' + esc(item.host) +
-      (item.verified ? "" : ' <span class="flag">공유 정보·재확인</span>') + "</p>");
-    parts.push('<dl class="facts">');
-    parts.push('<div class="fact"><dt>혜택</dt><dd>' + esc(item.benefit) + "</dd></div>");
-    parts.push('<div class="fact"><dt>조건</dt><dd>' + esc(item.condition) + "</dd></div>");
-    parts.push('<div class="fact"><dt>마감</dt><dd><strong>' + esc(formatDeadline(item.deadline, now)) + "</strong>" +
-      (item.announce ? ' <span class="muted">· ' + esc(item.announce) + "</span>" : "") + "</dd></div>");
-    parts.push("</dl>");
-    parts.push('<p class="tip"><span class="tip-label">한 줄 팁</span>' + esc(item.tip) + "</p>");
-    parts.push('<div class="card-foot">');
-    parts.push('<span class="src">출처 ' + esc(item.source) + "<br>확인 " + esc(item.checked) + "</span>");
-    parts.push('<a class="go" href="' + esc(item.url) + '" target="_blank" rel="noopener noreferrer">' +
-      esc(item.urlLabel || "원본에서 신청하기") +
-      ' <span aria-hidden="true">↗</span><span class="sr-only">(새 창)</span></a>');
-    parts.push("</div></article>");
-    return parts.join("");
-  }
+  var PLACEHOLDER = {
+    events: "기프티콘, 가습기, 네이밍…",
+    babyitems: "물티슈, 젖병, 체온계…",
+    picks: "기프티콘, 가습기, 네이밍…"
+  };
 
   function renderTabs(now) {
     var counts = {};
@@ -242,15 +282,13 @@
       total += 1;
     });
 
-    var html = DATA.categories.map(function (cat) {
+    tabsEl.innerHTML = DATA.categories.map(function (cat) {
       var n = cat.id === "all" ? total : (counts[cat.id] || 0);
       var selected = state.category === cat.id;
       return '<button type="button" role="tab" class="tab' + (selected ? " is-active" : "") +
         '" data-cat="' + esc(cat.id) + '" aria-selected="' + (selected ? "true" : "false") + '">' +
         esc(cat.label) + '<span class="tab-count">' + n + "</span></button>";
     }).join("");
-
-    tabsEl.innerHTML = html;
   }
 
   function renderStats(now) {
@@ -262,9 +300,14 @@
       var n = daysLeft(item.deadline, now);
       if (n !== null && n <= 3) { soon += 1; }
     });
-    document.getElementById("statTotal").textContent = String(total);
-    document.getElementById("statSoon").textContent = String(soon);
-    document.getElementById("statFree").textContent = "0원";
+    var set = function (id, value) {
+      var el = document.getElementById(id);
+      if (el) { el.textContent = String(value); }
+    };
+    set("statTotal", total);
+    set("statSoon", soon);
+    set("statItems", (DATA.affiliates || []).length);
+    set("vtEvents", total);
   }
 
   function renderStale(now) {
@@ -307,37 +350,38 @@
     countEl.textContent = text;
   }
 
-  function affiliateRowHtml(item) {
-    var links = [];
-    if (item.url) {
-      links.push('<a class="aff-btn" href="' + esc(item.url) +
-        '" target="_blank" rel="sponsored noopener noreferrer">네이버 최저가 <span aria-hidden="true">↗</span></a>');
-    }
-    if (item.coupangUrl) {
-      links.push('<a class="aff-btn aff-btn--coupang" href="' + esc(item.coupangUrl) +
-        '" target="_blank" rel="sponsored noopener noreferrer">쿠팡 최저가 <span aria-hidden="true">↗</span></a>');
-    }
-    var buy = links.length
-      ? '<span class="aff-links">' + links.join("") + "</span>"
-      : '<span class="aff-empty">링크 준비 중</span>';
-    var thumb = item.thumb
-      ? '<img class="aff-thumb" src="' + esc(item.thumb) +
-        '" alt="' + esc(item.name) + ' 상품 이미지" width="96" height="96"' +
-        ' loading="lazy" decoding="async">'
-      : "";
-    return "<tr>" +
-      "<th scope=\"row\"><span class=\"aff-item\">" + thumb +
-      "<span class=\"aff-name\">" + esc(item.name) + "</span></span></th>" +
-      "<td data-label=\"필요한 이유\">" + esc(item.why) + "</td>" +
-      "<td data-label=\"체크포인트\">" + esc(item.check) + "</td>" +
-      "<td data-label=\"대략 시세\" class=\"price\">" + esc(item.price) + "</td>" +
-      "<td data-label=\"구매\" class=\"buy\">" + buy + "</td>" +
-      "</tr>";
-  }
-
   function renderAffiliates() {
     if (!affiliateBody || !DATA.affiliates) { return; }
-    affiliateBody.innerHTML = DATA.affiliates.map(affiliateRowHtml).join("");
+    var list = filterAffiliates(DATA.affiliates, state.query);
+    affiliateBody.innerHTML = list.map(affiliateCardHtml).join("");
+    if (state.view === "babyitems" && countEl) {
+      countEl.textContent = list.length + "종 표시 중 · 가격은 2026년 11월 국내 판매가 기준";
+    }
+  }
+
+  /* ── 보기 전환 ──────────────────────────────────────────── */
+
+  function setView(view, silent) {
+    if (["events", "babyitems", "picks"].indexOf(view) === -1) { view = "events"; }
+    state.view = view;
+    panels.forEach(function (panel) {
+      panel.hidden = panel.getAttribute("data-view-panel") !== view;
+    });
+    if (viewTabs) {
+      Array.prototype.forEach.call(viewTabs.querySelectorAll(".view-tab"), function (btn) {
+        var on = btn.getAttribute("data-view") === view;
+        btn.classList.toggle("is-active", on);
+        btn.setAttribute("aria-selected", on ? "true" : "false");
+      });
+    }
+    if (filtersEl) { filtersEl.hidden = view !== "events"; }
+    if (sortField) { sortField.hidden = view !== "events"; }
+    if (toggleEl) { toggleEl.hidden = view !== "events"; }
+    if (searchWrap) { searchWrap.hidden = view === "picks"; }
+    if (listNote) { listNote.hidden = view !== "events"; }
+    if (searchEl) { searchEl.placeholder = PLACEHOLDER[view]; }
+    if (!silent && viewTabs) { /* 해시는 읽기만 하고 쓰지 않습니다. */ }
+    if (view !== "events") { if (countEl) { countEl.textContent = ""; } }
   }
 
   function render() {
@@ -345,10 +389,14 @@
     renderTabs(now);
     renderStats(now);
     renderStale(now);
-    renderList(now);
+    if (state.view === "babyitems") {
+      renderAffiliates();
+    } else {
+      renderList(now);
+    }
   }
 
-  /* ── 안내 모달 ───────────────────────────────────────────── */
+  /* ── 안내 모달 ──────────────────────────────────────────── */
 
   var modal = document.getElementById("modal");
   var modalTitle = document.getElementById("modalTitle");
@@ -417,7 +465,17 @@
     }
   });
 
-  /* ── 입력 이벤트 ─────────────────────────────────────────── */
+  /* ── 입력 이벤트 ────────────────────────────────────────── */
+
+  if (viewTabs) {
+    viewTabs.addEventListener("click", function (event) {
+      var btn = event.target.closest ? event.target.closest(".view-tab") : null;
+      if (!btn) { return; }
+      setView(btn.getAttribute("data-view"));
+      if (state.view === "babyitems") { renderAffiliates(); }
+      else if (state.view === "events") { renderList(new Date()); }
+    });
+  }
 
   tabsEl.addEventListener("click", function (event) {
     var btn = event.target.closest ? event.target.closest(".tab") : null;
@@ -427,34 +485,64 @@
   });
 
   var searchTimer = null;
-  searchEl.addEventListener("input", function () {
-    if (searchTimer) { global.clearTimeout(searchTimer); }
-    searchTimer = global.setTimeout(function () {
-      state.query = searchEl.value;
+  if (searchEl) {
+    searchEl.addEventListener("input", function () {
+      if (searchTimer) { global.clearTimeout(searchTimer); }
+      searchTimer = global.setTimeout(function () {
+        state.query = searchEl.value;
+        if (state.view === "babyitems") { renderAffiliates(); }
+        else { renderTabs(new Date()); renderList(new Date()); }
+      }, 120);
+    });
+  }
+
+  if (sortEl) {
+    sortEl.addEventListener("change", function () {
+      state.sort = sortEl.value;
+      renderList(new Date());
+    });
+  }
+
+  if (toggleEl) {
+    toggleEl.addEventListener("click", function () {
+      state.showExpired = !state.showExpired;
+      toggleEl.setAttribute("aria-pressed", state.showExpired ? "true" : "false");
+      toggleEl.textContent = state.showExpired ? "마감 지난 항목 숨기기" : "마감 지난 항목 보기";
       render();
-    }, 120);
+    });
+  }
+
+  if (resetEl) {
+    resetEl.addEventListener("click", function () {
+      state.category = "all";
+      state.sort = "deadline";
+      state.query = "";
+      state.showExpired = false;
+      if (searchEl) { searchEl.value = ""; }
+      if (sortEl) { sortEl.value = "deadline"; }
+      if (toggleEl) {
+        toggleEl.setAttribute("aria-pressed", "false");
+        toggleEl.textContent = "마감 지난 항목 보기";
+      }
+      render();
+    });
+  }
+
+  /* "/" 키로 검색창 이동 */
+  document.addEventListener("keydown", function (event) {
+    if (event.key !== "/" || event.metaKey || event.ctrlKey || event.altKey) { return; }
+    var tag = (event.target && event.target.tagName) || "";
+    if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") { return; }
+    if (!searchEl || (searchWrap && searchWrap.hidden)) { return; }
+    event.preventDefault();
+    searchEl.focus();
   });
 
-  sortEl.addEventListener("change", function () {
-    state.sort = sortEl.value;
-    render();
-  });
-
-  toggleEl.addEventListener("click", function () {
-    state.showExpired = !state.showExpired;
-    toggleEl.setAttribute("aria-pressed", state.showExpired ? "true" : "false");
-    toggleEl.textContent = state.showExpired ? "마감 지난 항목 숨기기" : "마감 지난 항목 보기";
-    render();
-  });
-
-  resetEl.addEventListener("click", function () {
-    state = { category: "all", sort: "deadline", query: "", showExpired: false };
-    searchEl.value = "";
-    sortEl.value = "deadline";
-    toggleEl.setAttribute("aria-pressed", "false");
-    toggleEl.textContent = "마감 지난 항목 보기";
-    render();
-  });
+  /* 첫 화면: 해시(#babyitems, #picks)로 보기 지정 */
+  var hash = String(global.location && global.location.hash || "").replace("#", "");
+  if (hash === "babyitems" || hash === "items" || hash === "compare") { setView("babyitems", true); }
+  else if (hash === "picks" || hash === "shop") { setView("picks", true); }
+  else { setView("events", true); }
 
   renderAffiliates();
   render();
