@@ -1372,19 +1372,12 @@ button {
 
 .modal-body ul {
   margin-top: 5px;
+  padding-left: 17px;
+  list-style: disc;
 }
 
-.modal-body li {
-  position: relative;
-  padding-left: 13px;
-}
-
-.modal-body li::before {
-  content: "·";
-  position: absolute;
-  left: 3px;
+.modal-body li::marker {
   color: var(--brand);
-  font-weight: 800;
 }
 
 body.modal-open {
