@@ -1087,6 +1087,15 @@ button {
   text-decoration: none;
 }
 
+/* 애드픽 규정: 대가성 문구는 본문과 같거나 큰 크기로 상단에 */
+.disclosure--lead {
+  margin-top: 16px;
+  border: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
 @media (min-width: 640px) {
   .pick-grid {
     grid-template-columns: repeat(2, 1fr);
