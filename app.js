@@ -322,7 +322,7 @@
       : '<span class="aff-empty">링크 준비 중</span>';
     var thumb = item.thumb
       ? '<img class="aff-thumb" src="' + esc(item.thumb) +
-        '" alt="' + esc(item.name) + ' 상품 이미지" width="48" height="48"' +
+        '" alt="' + esc(item.name) + ' 상품 이미지" width="96" height="96"' +
         ' loading="lazy" decoding="async">'
       : "";
     return "<tr>" +
