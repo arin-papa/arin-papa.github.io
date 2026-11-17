@@ -260,6 +260,7 @@
   var affiliateBody = document.getElementById("affiliateBody");
   var staleEl = document.getElementById("staleNotice");
   var filtersEl = document.getElementById("eventsFilters");
+  var resultLine = document.getElementById("resultLine");
   var sortField = document.getElementById("sortField");
   var listNote = document.getElementById("listNote");
   var panels = Array.prototype.slice.call(document.querySelectorAll("[data-view-panel]"));
@@ -379,6 +380,7 @@
     if (toggleEl) { toggleEl.hidden = view !== "events"; }
     if (searchWrap) { searchWrap.hidden = view === "picks"; }
     if (listNote) { listNote.hidden = view !== "events"; }
+    if (resultLine) { resultLine.hidden = view === "picks"; }
     if (searchEl) { searchEl.placeholder = PLACEHOLDER[view]; }
     if (!silent && viewTabs) { /* 해시는 읽기만 하고 쓰지 않습니다. */ }
     if (view !== "events") { if (countEl) { countEl.textContent = ""; } }
