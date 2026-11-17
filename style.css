@@ -1454,6 +1454,11 @@ body.modal-open {
 }
 
 @media (max-width: 559px) {
+  /* 좁은 화면에서는 필터 영역이 화면을 너무 많이 차지해 고정하지 않습니다. */
+  .toolbar {
+    position: static;
+  }
+
   .controls {
     flex: 1 1 100%;
     justify-content: stretch;
