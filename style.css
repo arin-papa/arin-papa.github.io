@@ -894,13 +894,34 @@ button {
 }
 
 .compare tbody th {
-  width: 15%;
+  width: 17%;
   padding: 14px;
   color: var(--ink);
   font-size: 0.9rem;
   font-weight: 800;
   text-align: left;
   vertical-align: top;
+}
+
+.aff-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.aff-thumb {
+  flex: none;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  object-fit: cover;
+}
+
+.aff-name {
+  display: block;
+  line-height: 1.35;
 }
 
 .compare td {
@@ -967,6 +988,23 @@ button {
   background: #f1efe9;
   color: #5c646e;
   font-size: 0.78rem;
+}
+
+@media (max-width: 700px) {
+  .compare tbody th {
+    padding: 12px;
+  }
+
+  .aff-item {
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  .aff-thumb {
+    width: 44px;
+    height: 44px;
+    border-radius: 9px;
+  }
 }
 
 /* ── 플랫폼 · FAQ ───────────────────────────────────────── */

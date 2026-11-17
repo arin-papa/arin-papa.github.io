@@ -320,8 +320,14 @@
     var buy = links.length
       ? '<span class="aff-links">' + links.join("") + "</span>"
       : '<span class="aff-empty">링크 준비 중</span>';
+    var thumb = item.thumb
+      ? '<img class="aff-thumb" src="' + esc(item.thumb) +
+        '" alt="' + esc(item.name) + ' 상품 이미지" width="48" height="48"' +
+        ' loading="lazy" decoding="async">'
+      : "";
     return "<tr>" +
-      "<th scope=\"row\">" + esc(item.name) + "</th>" +
+      "<th scope=\"row\"><span class=\"aff-item\">" + thumb +
+      "<span class=\"aff-name\">" + esc(item.name) + "</span></span></th>" +
       "<td data-label=\"필요한 이유\">" + esc(item.why) + "</td>" +
       "<td data-label=\"체크포인트\">" + esc(item.check) + "</td>" +
       "<td data-label=\"대략 시세\" class=\"price\">" + esc(item.price) + "</td>" +
