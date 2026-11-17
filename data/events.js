@@ -1,0 +1,481 @@
+/*!
+ * 아린아빠 혜택노트 — 목록 데이터
+ * 최종 확인일: 2026-11-17 (대한민국 기준)
+ *
+ * 원칙
+ *  - 참가비·제품비·배송비를 신청자가 부담하지 않는 항목만 담습니다.
+ *  - 마감일은 주관처 공고에 적힌 날짜를 그대로 옮겼습니다. 시각 표기가 없으면 당일 24시 마감입니다.
+ *  - verified: false 는 공고 원문이 아닌 공유 자료로 확인한 항목입니다(카드에 '공유 정보·재확인' 표시).
+ *  - affiliates 의 url 은 네이버 쇼핑커넥트(아린이네 크리에이터 스페이스) 발급 링크,
+ *    coupangUrl 은 쿠팡 파트너스 발급 링크입니다(두 버튼이 비교표에 나란히 표시됨).
+ */
+(function (root) {
+  "use strict";
+
+  var DATA = {
+    updatedAt: "2026-11-17",
+
+    categories: [
+      { id: "all", label: "전체" },
+      { id: "baby", label: "육아·6개월" },
+      { id: "survey", label: "설문·기프티콘" },
+      { id: "delivery", label: "배송형 체험단" },
+      { id: "contest", label: "공모전" }
+    ],
+
+    events: [
+      /* ── 육아·6개월 ─────────────────────────────────────────── */
+      {
+        id: "baby-torybox",
+        cat: "baby",
+        title: "토리박스 1차 — 12개 브랜드 육아 큐레이션 박스",
+        host: "마더케이 멘토리",
+        benefit: "아기 9종 + 엄마 3종, 12개 브랜드 제품 (소비자가 약 22만 5천 원 상당) · 매달 30명 추첨",
+        condition: "0원 응모형(결제·배송비 없음). 멘토리 가입 후 아기 정보 등록 → 신청서 제출",
+        deadline: "2026-11-30",
+        announce: "발표 12/4 · 배송 12/10",
+        url: "https://docs.google.com/forms/d/e/1FAIpQLSfiSA7Lm6ufAeTxc_Cmn6Pm63NlQdiByehWYnpaGNhgd9JYqw/viewform",
+        urlLabel: "신청서 열기",
+        source: "마더케이 멘토리 이벤트 페이지(mamentory.com)",
+        checked: "2026-11-17",
+        verified: true,
+        posted: "2026-11-17",
+        tip: "아기 생년월일과 월령(200일)을 정확히 적어 두면 선정에 유리합니다. 신청서 이메일은 마이페이지에 등록된 주소와 같아야 하니 먼저 확인하세요."
+      },
+      {
+        id: "baby-bebesup",
+        cat: "baby",
+        title: "11월 마음박스(52회차) — 7개 브랜드 육아 선물 상자",
+        host: "베베숲",
+        benefit: "베베숲·그레이트북스·벨레다·브리스틱·앱솔루트·베베쿡·므므브 제품 한 상자 · 추첨 증정",
+        condition: "예비맘·출산맘 대상, 0원. 회원가입 + 출생 증빙(가족관계증명서 등) 첨부 필요",
+        deadline: "2026-11-20",
+        announce: "매월 1~20일 진행 · 발표는 사이트 공지",
+        url: "https://www.bebesup.co.kr/proc/heartbox",
+        urlLabel: "이벤트 페이지 열기",
+        source: "베베숲 공식 이벤트 페이지(11/17 확인)",
+        checked: "2026-11-17",
+        verified: true,
+        posted: "2026-11-01",
+        tip: "매달 1일부터 20일까지만 열립니다. 계정 명의와 출생 증빙의 이름이 같아야 하니 부모 명의로 준비하세요."
+      },
+
+      /* ── 배송형 체험단 ─────────────────────────────────────── */
+      {
+        id: "delivery-maaxpert",
+        cat: "delivery",
+        title: "[맥스퍼트] 스텐 가열식 가습기 체험단",
+        host: "택배의여왕",
+        benefit: "스텐 가열식 가습기 1대 (16만 원 상당) · 10명",
+        condition: "0원 배송형. 선정 시 블로그 리뷰 — 사진 15장 이상 + 영상 1개 + 800자 이상 + 지정 키워드·구매 링크 포함",
+        deadline: "2026-11-19",
+        announce: "발표 11/20 · 리뷰 기간 11/21~12/5",
+        url: "https://tqueens.net/taste?query=%EA%B0%80%EC%8A%B5%EA%B8%B0",
+        urlLabel: "캠페인 검색 열기",
+        source: "택배의여왕 캠페인 페이지(11/16 확인)",
+        checked: "2026-11-16",
+        verified: true,
+        posted: "2026-11-13",
+        tip: "제품값이 큰 만큼 리뷰 미션이 무겁습니다. 사진 15장과 영상 1개를 만들 시간이 있는지 먼저 계산하세요."
+      },
+      {
+        id: "delivery-minong",
+        cat: "delivery",
+        title: "미뇽플레르 꽃다발 배송형 체험단",
+        host: "모두의체험단",
+        benefit: "꽃다발 1개 제공 (0원 배송형)",
+        condition: "플랫폼 가입 후 캠페인 신청, 선정 시 SNS·블로그 후기 작성",
+        deadline: "2026-11-17",
+        announce: "플랫폼 공지",
+        url: "https://modan.kr",
+        urlLabel: "캠페인 찾기",
+        source: "체험단 공유 자료(2026-11-17)",
+        checked: "2026-11-17",
+        verified: false,
+        posted: "2026-11-17",
+        tip: "오늘 마감 항목입니다. 신청 전 플랫폼에서 마감 시각과 후기 조건을 확인하세요."
+      },
+      {
+        id: "delivery-hydra",
+        cat: "delivery",
+        title: "하이드라 베리어 에센스 배송형 체험단",
+        host: "리뷰플레이스",
+        benefit: "에센스 1개 제공 (0원 배송형)",
+        condition: "플랫폼 가입 후 신청, 블로그 리뷰 미션",
+        deadline: "2026-11-18",
+        announce: "플랫폼 공지",
+        url: "https://www.reviewplace.co.kr",
+        urlLabel: "캠페인 찾기",
+        source: "체험단 공유 자료(2026-11-17)",
+        checked: "2026-11-17",
+        verified: false,
+        posted: "2026-11-17",
+        tip: "플랫폼 상단 검색창에 제품명을 넣으면 해당 캠페인으로 바로 이동합니다. 리뷰 분량도 함께 확인하세요."
+      },
+      {
+        id: "delivery-arnicap",
+        cat: "delivery",
+        title: "아르니캡 온열파스 체험단",
+        host: "아싸뷰",
+        benefit: "온열파스 제품 제공 (0원 배송형)",
+        condition: "플랫폼 가입 후 신청, 후기 작성",
+        deadline: "2026-11-20",
+        announce: "플랫폼 공지",
+        url: "https://assaview.co.kr",
+        urlLabel: "캠페인 찾기",
+        source: "체험단 공유 자료(2026-11-17)",
+        checked: "2026-11-17",
+        verified: false,
+        posted: "2026-11-17",
+        tip: "아싸뷰는 매일 정오에 신규 캠페인이 열립니다. 정오 직후 신청하면 경쟁이 덜합니다."
+      },
+      {
+        id: "delivery-godfire",
+        cat: "delivery",
+        title: "갓파이어 소화패치 체험단",
+        host: "리뷰플레이스",
+        benefit: "소화패치 제품 제공 (0원 배송형)",
+        condition: "플랫폼 가입 후 신청, 블로그 리뷰 미션",
+        deadline: "2026-11-23",
+        announce: "플랫폼 공지",
+        url: "https://www.reviewplace.co.kr",
+        urlLabel: "캠페인 찾기",
+        source: "체험단 공유 자료(2026-11-17)",
+        checked: "2026-11-17",
+        verified: false,
+        posted: "2026-11-17",
+        tip: "리뷰플레이스는 신청 인원이 많은 편입니다. 선정 인원이 넉넉한 캠페인을 골라 신청하세요."
+      },
+      {
+        id: "delivery-reposs",
+        cat: "delivery",
+        title: "르포스 드로즈·발열내의 체험단",
+        host: "무신사",
+        benefit: "드로즈·발열내의 제품 제공 (0원 배송형)",
+        condition: "무신사 회원 신청, 후기 작성",
+        deadline: "2026-11-23",
+        announce: "플랫폼 공지",
+        url: "https://www.musinsa.com",
+        urlLabel: "캠페인 찾기",
+        source: "체험단 공유 자료(2026-11-17)",
+        checked: "2026-11-17",
+        verified: false,
+        posted: "2026-11-17",
+        tip: "의류는 사이즈 선택 항목이 있어 신청 전에 실측 표를 확인해 두면 선정 후 교환이 줄어듭니다."
+      },
+
+      /* ── 설문·기프티콘 ─────────────────────────────────────── */
+      {
+        id: "survey-lofin",
+        cat: "survey",
+        title: "지방재정365 사용자 만족도 조사",
+        host: "행정안전부 지방재정365",
+        benefit: "편의점 모바일상품권 1만 원권 · 100명 추첨",
+        condition: "국민·학계·연구기관 등 지방재정365 이용자, 24문항",
+        deadline: "2026-11-17",
+        announce: "발표일 폼 미기재",
+        url: "https://www.lofin365.go.kr/lf/prtlCom/etcFunc/mainsrnSvi/retvMainsrnQsivPpupView.do",
+        urlLabel: "설문 열기",
+        source: "지방재정365 홈페이지 설문 팝업",
+        checked: "2026-11-16",
+        verified: true,
+        posted: "2026-11-16",
+        tip: "오늘 마감입니다. 사이트에서 우리 지역 세출예산을 한 번 열어본 뒤 답하면 문항이 자연스럽게 이어집니다."
+      },
+      {
+        id: "survey-higt",
+        cat: "survey",
+        title: "하이GT와 말이 통하는 경기 여행! 퀴즈",
+        host: "경기관광공사",
+        benefit: "피자헛 피자+콜라(40명) · 다이소 2만 원권(60명) · 빽다방 카페라떼(200명)",
+        condition: "3지선다 퀴즈, 누구나 참여, 0원",
+        deadline: "2026-11-19",
+        announce: "발표 11/25",
+        url: "https://forms.gle/eKz5Vizayf9vbuJQ7",
+        urlLabel: "퀴즈 응모하기",
+        source: "경기관광공사 이벤트 페이지",
+        checked: "2026-11-15",
+        verified: true,
+        posted: "2026-11-15",
+        tip: "경품이 300명 규모로 커서 기대값이 좋은 퀴즈입니다. 이벤트 페이지에 힌트가 함께 올라와 있어요."
+      },
+      {
+        id: "survey-maesil",
+        cat: "survey",
+        title: "유기농 매실가공식품 디자인 선호도 조사",
+        host: "광양원예농협",
+        benefit: "메가커피 아메리카노 모바일 쿠폰 · 100명 추첨",
+        condition: "1분 설문(시안 선택 + 성별·연령·지역·휴대폰), 로그인·본인인증 없음",
+        deadline: "2026-11-20T23:59",
+        announce: "발표 11/21 (로또번호 추첨)",
+        url: "https://is.gd/maesilcontest",
+        urlLabel: "설문 열기",
+        source: "광양원예농협 설문 페이지",
+        checked: "2026-11-15",
+        verified: true,
+        posted: "2026-11-15",
+        tip: "로그인도 본인인증도 없어 1분이면 끝납니다. 발표가 다음 날이라 결과 확인도 빠릅니다."
+      },
+      {
+        id: "survey-kised",
+        cat: "survey",
+        title: "인지도·이미지 및 SNS 채널 이용 실태조사",
+        host: "창업진흥원",
+        benefit: "공차 블랙밀크티+펄 L + 그릴드 핫치킨 브리또 · 30명",
+        condition: "대한민국 국민 누구나, 네이버폼 응답",
+        deadline: "2026-11-20T23:59",
+        announce: "발표 11/26",
+        url: "https://form.naver.com/response/F5Cas8Ha3EL",
+        urlLabel: "설문 열기",
+        source: "창업진흥원 네이버폼",
+        checked: "2026-11-14",
+        verified: true,
+        posted: "2026-11-14",
+        tip: "마감이 21일 0시입니다. 20일 밤까지는 제출을 마쳐야 응모로 인정됩니다."
+      },
+      {
+        id: "survey-kalit",
+        cat: "survey",
+        title: "2026년 공공기관 인지도조사",
+        host: "국토안전관리원",
+        benefit: "네이버페이 모바일상품권 5,000원 · 150명 추첨",
+        condition: "7단계 문항 전부 응답, 누구나 참여",
+        deadline: "2026-11-22",
+        announce: "발표 11월 말",
+        url: "https://docs.google.com/forms/d/e/1FAIpQLSccXsjQVhJ2QcIni8qExKxnAhWPwmHj_ldjvDSm-RMd26UBfw/viewform",
+        urlLabel: "설문 열기",
+        source: "국토안전관리원 구글폼",
+        checked: "2026-11-14",
+        verified: true,
+        posted: "2026-11-14",
+        tip: "7단계로 나뉜 선택형 문항입니다. 중간에 창을 닫으면 처음부터 다시 해야 하니 한 번에 끝내세요."
+      },
+      {
+        id: "survey-itstat",
+        cat: "survey",
+        title: "11월 퀴즈이벤트 — ICT 통계포털",
+        host: "정보통신정책연구원 ICT 통계포털",
+        benefit: "커피 기프티콘 · 100명",
+        condition: "사이트 검색 기능을 이용한 정답 입력, 성명·연락처·메일 제출",
+        deadline: "2026-11-22",
+        announce: "발표 11/25",
+        url: "https://www.itstat.go.kr/itstat/kor/event/EventList.html",
+        urlLabel: "이벤트 열기",
+        source: "ICT 통계포털 이벤트 게시판",
+        checked: "2026-11-15",
+        verified: true,
+        posted: "2026-11-15",
+        tip: "정답은 사이트의 상세검색 기간 옵션을 직접 열어 확인하면 됩니다. 뉴스레터 수신은 따로 신청하지 않아도 응모됩니다."
+      },
+      {
+        id: "survey-komsa",
+        cat: "survey",
+        title: "어선거래시스템 11월 퀴즈 이벤트",
+        host: "한국해양교통안전공단",
+        benefit: "다이소 모바일금액권 1만 원권 · 20명 추첨",
+        condition: "초성 힌트를 보고 정답 입력, 경로 선택",
+        deadline: "2026-11-22T23:59",
+        announce: "발표 11/26",
+        url: "https://form.naver.com/response/2wnnBoAUXQf",
+        urlLabel: "퀴즈 응모하기",
+        source: "한국해양교통안전공단 네이버폼",
+        checked: "2026-11-16",
+        verified: true,
+        posted: "2026-11-16",
+        tip: "공고에는 22일 마감으로 적혀 있고 폼은 23일 0시에 닫힙니다. 안전하게 22일 낮에 제출하세요."
+      },
+      {
+        id: "survey-bigkinds",
+        cat: "survey",
+        title: "2026 이용자 설문조사 — 빅카인즈",
+        host: "한국언론진흥재단",
+        benefit: "커피 교환권 · 40명",
+        condition: "17문항 + 동의 + 성명·연락처 제출",
+        deadline: "2026-11-23",
+        announce: "발표 11/30",
+        url: "https://docs.google.com/forms/d/e/1FAIpQLSfQibLbHhNasaa8i2vtvhjDJBP7iXLAvYtKL-vOTcmPqJp9AA/viewform",
+        urlLabel: "설문 열기",
+        source: "빅카인즈 구글폼",
+        checked: "2026-11-14",
+        verified: true,
+        posted: "2026-11-14",
+        tip: "뉴스 검색 서비스를 써 본 적이 없어도 답할 수 있는 문항 구성입니다. 뉴스를 자주 찾는 분이라면 부담이 적어요."
+      },
+      {
+        id: "survey-busan",
+        cat: "survey",
+        title: "2026년 공공데이터 대국민 설문조사",
+        host: "부산시설공단",
+        benefit: "소정의 모바일 상품권(기프티콘) · 수량·금액 공고 미기재",
+        condition: "누구나 참여, 네이버폼 응답",
+        deadline: "2026-11-24T18:00",
+        announce: "발표일 미기재",
+        url: "https://form.naver.com/response/Bvym7XatZpO",
+        urlLabel: "설문 열기",
+        source: "부산시설공단 네이버폼",
+        checked: "2026-11-14",
+        verified: true,
+        posted: "2026-11-14",
+        tip: "경품 수량과 금액이 공고에 없습니다. 당첨 인원이 적을 수 있으니 다른 항목과 함께 응모하세요."
+      },
+      {
+        id: "survey-kalit2",
+        cat: "survey",
+        title: "가치체계 공유도 2차 조사",
+        host: "국토안전관리원",
+        benefit: "모바일 커피쿠폰 5,000원 상당 · 200명 추첨",
+        condition: "대국민·이해관계자 대상, 구글폼 응답",
+        deadline: "2026-11-27",
+        announce: "발표일 미기재",
+        url: "https://docs.google.com/forms/d/e/1FAIpQLScbULxGiqtyLKZudfC277jBbyqD3F9ARdtvrijmKfpslPKqsw/viewform",
+        urlLabel: "설문 열기",
+        source: "국토안전관리원 구글폼",
+        checked: "2026-11-14",
+        verified: true,
+        posted: "2026-11-14",
+        tip: "1차 인지도조사와 별개로 진행되는 조사라 두 건 모두 응모할 수 있습니다. 인원이 200명이라 확률이 나은 편이에요."
+      },
+      {
+        id: "survey-nongsik",
+        cat: "survey",
+        title: "2026 홈페이지 이용자 만족도 조사",
+        host: "농식품정보누리",
+        benefit: "소정의 경품 · 40명 추첨 (금액 공고 미기재)",
+        condition: "10문항 리커트 + 개선 의견 + 이름·휴대폰",
+        deadline: "2026-11-27T23:30",
+        announce: "발표 12/1",
+        url: "https://form.naver.com/response/AJpHyznLro8",
+        urlLabel: "설문 열기",
+        source: "농식품정보누리 네이버폼",
+        checked: "2026-11-15",
+        verified: true,
+        posted: "2026-11-15",
+        tip: "문항이 10개로 짧은 편입니다. 개선 의견 칸을 채우면 성의 있는 응답으로 남습니다."
+      },
+      {
+        id: "survey-hangeul",
+        cat: "survey",
+        title: "누리집 이용자 만족도 조사",
+        host: "국립한글박물관",
+        benefit: "음료 교환권 1만 원 상당 · 100명 추첨",
+        condition: "홈페이지 배너 QR로 접속해 응답, 방문 경험 문항 포함",
+        deadline: "2026-11-29",
+        announce: "발표 12/4",
+        url: "https://d2y0dq2lemx2do.cloudfront.net",
+        urlLabel: "설문 열기",
+        source: "국립한글박물관 홈페이지 배너",
+        checked: "2026-11-16",
+        verified: true,
+        posted: "2026-11-16",
+        tip: "방문한 적이 없으면 ‘방문한 적 없음’으로 사실대로 답하면 됩니다. 첫 방문자도 응모 대상입니다."
+      },
+
+      /* ── 공모전 ───────────────────────────────────────────── */
+      {
+        id: "contest-column",
+        cat: "contest",
+        title: "제36회 시장경제칼럼 공모전",
+        host: "재단법인 자유기업원",
+        benefit: "대상 30만 원 · 최우수 15만 원 · 우수 5만 원 + 수상자 전원 도서 (응모 무료)",
+        condition: "시장경제에 관심 있는 누구나, 2,000자 내외 칼럼 1편, 온라인 폼 제출",
+        deadline: "2026-11-18T17:00",
+        announce: "발표 11/27 · 시상식 12/4 비대면",
+        url: "https://forms.gle/zLrZouNBVrH5Jew16",
+        urlLabel: "응모 폼 열기",
+        source: "자유기업원 공고(cfe.org)",
+        checked: "2026-11-17",
+        verified: true,
+        posted: "2026-11-09",
+        tip: "공고에 ‘마감 전날부터 접속이 몰린다’고 적혀 있습니다. 18일 오후 5시 마감이니 한 시간 전에는 제출하세요."
+      },
+      {
+        id: "contest-bus",
+        cat: "contest",
+        title: "저상 좌석버스 네이밍·아이콘 공모전",
+        host: "(사)한국지체장애인협회",
+        benefit: "최우수 30만 원 · 우수 20만 원(2명) · 장려 10만 원(3명), 총 100만 원",
+        condition: "전 국민 누구나, 1인 1건. 네이밍과 아이콘을 함께 응모하고 신청서·동의서를 이메일로 제출",
+        deadline: "2026-11-29",
+        announce: "발표 12/7",
+        url: "https://main.kotsa.or.kr/portal/bbs/notice_view.do?bbscCode=notice&bbscSeqn=18460&menuCode=05010100",
+        urlLabel: "공고 확인하기",
+        source: "한국교통안전공단 공지(주최 한국지체장애인협회)",
+        checked: "2026-11-17",
+        verified: true,
+        posted: "2026-11-13",
+        tip: "‘저상 좌석버스’, ‘모두의 버스’는 제외 명칭입니다. 2027년부터 저상버스 도입이 의무화되는 배경을 이름에 담으면 심사에서 유리합니다."
+      },
+      {
+        id: "contest-pps",
+        cat: "contest",
+        title: "2026 조달청 AI 게임·콘텐츠 공모전",
+        host: "조달청",
+        benefit: "총 20점 · 총상금 550만 원 (대상 200만 원, 참가상 10점 각 5만 원)",
+        condition: "대한민국 국민 누구나(개인·팀), AI 게임·AI 시나리오·AI 영상 중 택1, 이메일 제출",
+        deadline: "2026-11-22",
+        announce: "공고 사이트 공지",
+        url: "https://blog.naver.com/ppspr/224440256164",
+        urlLabel: "공모요강 열기",
+        source: "조달청 공식 블로그 공고",
+        checked: "2026-11-17",
+        verified: true,
+        posted: "2026-10-12",
+        tip: "참가상이 10점(각 5만 원)이라 완성도보다 ‘일단 내는 것’이 남는 구조입니다. AI 시나리오는 단편(60분 미만)이면 됩니다."
+      }
+    ],
+
+    /* 육아템 비교표 — url 에 제휴 링크를 넣으면 ‘구매’ 칸에 버튼이 생깁니다. */
+    affiliates: [
+      {
+        key: "humidifier",
+        name: "스텐 가열식 가습기",
+        why: "이유식과 분유를 먹고 잠자리가 길어지는 시기, 방 습도를 40~60%로 유지하는 데 씁니다. 가열식은 물을 끓여 수증기를 만듭니다.",
+        check: "스텐 용기인지, 연속 가열 시간, 세척구 넓이, 취침 모드 소음, 자동 건조 기능",
+        price: "8만~20만 원",
+        url: "https://naver.me/FmGLv04V",
+        coupangUrl: "https://link.coupang.com/a/iJ9yZeRzJA"
+      },
+      {
+        key: "cooler-bag",
+        name: "이유식 보냉가방",
+        why: "이유식 2팩 이상을 들고 외출하거나 친정·어린이집에 맡길 때 온도를 유지합니다.",
+        check: "단열재 두께, 젤팩 포함 여부, 세척 가능한 내피, 차량용 12V 지원",
+        price: "1만~4만 원",
+        url: "https://naver.me/Fx2HyeOM",
+        coupangUrl: "https://link.coupang.com/a/iJ9z1gAaQK"
+      },
+      {
+        key: "cube",
+        name: "이유식 큐브·용기 세트",
+        why: "중기 이유식은 한 번에 지어 소분해 두는 방식이 편합니다. 30ml 단위 큐브가 초기·중기 전환에 맞습니다.",
+        check: "전자레인지·식세기 사용 가능 여부, 뚜껑 밀폐력, 용량 단위, 식품용 소재 표기",
+        price: "1만~3만 원",
+        url: "https://naver.me/F8lgwpQc",
+        coupangUrl: "https://link.coupang.com/a/iJ9BYVGBpc"
+      },
+      {
+        key: "tights",
+        name: "아기 타이즈·수면조끼",
+        why: "배냇저고리를 졸업하는 시기, 기저귀를 갈기 쉬우면서 배는 따뜻하게 유지하는 옷입니다.",
+        check: "목·발목 고무 밴드 압박, 오가닉·무형광 소재, 세탁 후 줄어듦, 한 치수 여유",
+        price: "1만~3만 원",
+        url: "https://naver.me/5vJj26r1",
+        coupangUrl: "https://link.coupang.com/a/iJ9CTgW7fE"
+      },
+      {
+        key: "diaper",
+        name: "기저귀 3단계(밴드형)",
+        why: "6~9kg 구간에 맞춰지는 단계입니다. 밤 수면이 길어지며 흡수량 차이가 크게 드러납니다.",
+        check: "밤 10시간 흡수량, 밴드 늘어남·자국, 등·허벅지 샘 방지, 박스당 장수",
+        price: "3만~5만 원(1박스)",
+        url: "https://naver.me/5397G3T4",
+        coupangUrl: "https://link.coupang.com/a/iJ9DTpTw1Q"
+      }
+    ]
+  };
+
+  root.HYENOTE_DATA = DATA;
+  if (typeof module !== "undefined" && module.exports) {
+    module.exports = DATA;
+  }
+})(typeof globalThis !== "undefined" ? globalThis : this);
