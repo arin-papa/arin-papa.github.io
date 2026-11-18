@@ -1,6 +1,6 @@
 /*!
  * 아린아빠 혜택노트 — 목록 데이터
- * 최종 확인일: 2026-11-17 (대한민국 기준) / 무료혜택 38건 · 육아템 13종
+ * 최종 확인일: 2026-11-18 (대한민국 기준) / 무료혜택 43건 · 육아템 13종
  *
  * 원칙
  *  - 참가비·제품비·배송비를 신청자가 부담하지 않는 항목만 담습니다.
@@ -14,7 +14,7 @@
   "use strict";
 
   var DATA = {
-    updatedAt: "2026-11-17",
+    updatedAt: "2026-11-18",
 
     categories: [
       { id: "all", label: "전체" },
@@ -25,6 +25,128 @@
     ],
 
     events: [
+      {
+        id: "survey-nia-digitaljiphyeonjeon",
+        cat: "survey",
+        title: "디지털집현전 이용자 만족도 조사 (선착순 200명)",
+        host: "한국지능정보사회진흥원(NIA)·과학기술정보통신부",
+        benefit: "1만 원권 커피 쿠폰 · 선착순 200명",
+        condition: "디지털집현전(k-knowledge.kr) 이용자 누구나, 온라인 설문. 0원",
+        target: "디지털집현전을 이용해 본 국민",
+        deadline: "2026-11-20T22:30",
+        announce: "선착순 마감 (별도 추첨 없음)",
+        url: "https://form.naver.com/response/E0uBSE1wYGI",
+        urlLabel: "설문 열기",
+        source: "콘테스트코리아·NIA 공고(11/18 확인)",
+        checked: "2026-11-18",
+        verified: true,
+        posted: "2026-11-18",
+        tip: "추첨이 아니라 선착순이라 마감 전에 제출해야 합니다. 플랫폼에서 관심 주제를 한 번 검색해 본 뒤 답하면 문항이 자연스럽게 이어집니다."
+      },
+      {
+        id: "survey-kfis-story",
+        cat: "survey",
+        title: "「스토리가 있는 재정」 주제 수요조사",
+        host: "한국재정정보원",
+        benefit: "배달의민족 상품권 1만 원권(10명) · 5천 원권(80명)",
+        condition: "열린재정 이용자, 네이버폼에 궁금한 재정 질문 작성. 0원",
+        target: "열린재정 이용자",
+        deadline: "2026-11-18",
+        announce: "발표 11/30",
+        url: "https://naver.me/539ettUB",
+        urlLabel: "질문 남기기",
+        source: "한국재정정보원 이벤트 안내(11/18 확인)",
+        checked: "2026-11-18",
+        verified: true,
+        posted: "2026-11-18",
+        tip: "질문을 성의 있게 쓰는 것이 핵심입니다. 육아·주거처럼 생활과 닿은 재정 주제로 물으면 다음 카드뉴스 주제로도 채택될 수 있습니다."
+      },
+      {
+        id: "survey-seoul-air",
+        cat: "survey",
+        title: "대기질 정보 알림서비스 신청 이벤트",
+        host: "서울특별시 대기환경정보",
+        benefit: "메가커피 모바일 쿠폰 · 1,000명 추첨",
+        condition: "대기질 알림서비스(문자·알림톡) 신청자 대상 추첨. 0원",
+        deadline: "2026-11-18",
+        announce: "서울시 공지",
+        url: "https://cleanair.seoul.go.kr/citizen/sms",
+        urlLabel: "알림서비스 신청",
+        source: "모아득·서울시 대기환경정보(11/18 확인)",
+        checked: "2026-11-18",
+        verified: false,
+        posted: "2026-11-18",
+        tip: "신청하면 미세먼지·오존 예보를 문자나 알림톡으로 계속 받게 됩니다. 알림을 원치 않으면 신청하지 마세요."
+      },
+      {
+        id: "survey-pps-stats",
+        cat: "survey",
+        title: "조달사업통계 만족도·개선의견 설문",
+        host: "조달청",
+        benefit: "경품 이벤트 병행 (공고에 경품 종류·수량 미기재)",
+        condition: "조달사업통계 이용자 대상 온라인 설문. 0원",
+        target: "조달사업통계 이용자",
+        deadline: "2026-12-15",
+        announce: "발표일 미기재",
+        url: "https://naver.me/58qm5d7i",
+        urlLabel: "설문 열기",
+        source: "조달청 공지사항(11/16 게시, 11/18 확인)",
+        checked: "2026-11-18",
+        verified: true,
+        posted: "2026-11-18",
+        tip: "조달사업통계를 실제로 쓰는 사람 대상입니다. 이용 경험이 없으면 응답이 어렵습니다."
+      },
+      {
+        id: "delivery-blleju",
+        cat: "delivery",
+        title: "[블레쥬] 아토지세라 피부장벽 크림 체험단",
+        host: "택배의여왕",
+        benefit: "아토지세라 피부장벽 크림 75ml 1개 · 20명 모집",
+        condition: "0원 배송형. 건성 피부 체험 우선, 사진 15장 이상 + 영상 1개 + 800자 이상 + 지정 키워드·배너·링크",
+        deadline: "2026-11-24",
+        announce: "발표 11/25 · 리뷰 11/26~12/10",
+        url: "https://tqueens.net/taste/1658488",
+        urlLabel: "캠페인 열기",
+        source: "택배의여왕 캠페인 페이지(11/18 확인)",
+        checked: "2026-11-18",
+        verified: true,
+        posted: "2026-11-18",
+        tip: "신청 17명 / 모집 20명으로 경쟁이 낮은 편입니다. 사용 전후 피부 사진과 발림 컷이 리뷰 필수 장면입니다."
+      },
+      {
+        id: "delivery-snackq",
+        cat: "delivery",
+        title: "[스낵큐] 저당 흑미비스킷 체험단",
+        host: "택배의여왕",
+        benefit: "저당 흑미비스킷 356g 1개 · 10명 모집",
+        condition: "0원 배송형. 사진 15장 이상 + 영상 1개 + 800자 이상 + 지정 키워드·배너·링크",
+        deadline: "2026-11-24",
+        announce: "발표 11/25 · 리뷰 11/26~12/10",
+        url: "https://tqueens.net/taste/1634371",
+        urlLabel: "캠페인 열기",
+        source: "택배의여왕 캠페인 페이지(11/18 확인)",
+        checked: "2026-11-18",
+        verified: true,
+        posted: "2026-11-18",
+        tip: "개별 포장 3개입 구성과 커피와의 조합을 사진으로 담아야 합니다. 사진 15장·영상 1개가 필수입니다."
+      },
+      {
+        id: "delivery-momenst",
+        cat: "delivery",
+        title: "[모먼스트] 매트리스 방수커버 체험단",
+        host: "택배의여왕",
+        benefit: "매트리스 방수커버 1개 (사이즈 택 1) · 10명 모집",
+        condition: "0원 배송형. 신청 시 매트리스 사이즈 필수 기재, 사진 15장 이상 + 영상 1개 + 800자 이상",
+        deadline: "2026-11-24",
+        announce: "발표 11/25 · 리뷰 11/26~12/10",
+        url: "https://tqueens.net/taste/1641048",
+        urlLabel: "캠페인 열기",
+        source: "택배의여왕 캠페인 페이지(11/18 확인)",
+        checked: "2026-11-18",
+        verified: true,
+        posted: "2026-11-18",
+        tip: "쓰는 매트리스 사이즈(S·SS·Q·K 등)를 정확히 적어야 합니다. 미기재는 선정에서 제외되고 선정 뒤에는 바꿀 수 없습니다."
+      },
       {
         id: "baby-torybox",
         cat: "baby",
@@ -76,23 +198,6 @@
         verified: true,
         posted: "2026-11-13",
         tip: "제품값이 큰 만큼 리뷰 미션이 무겁습니다. 사진 15장과 영상 1개를 만들 시간이 있는지 먼저 계산하세요."
-      },
-      {
-        id: "delivery-minong",
-        cat: "delivery",
-        title: "미뇽플레르 꽃다발 배송형 체험단",
-        host: "모두의체험단",
-        benefit: "꽃다발 1개 제공 (0원 배송형)",
-        condition: "플랫폼 가입 후 캠페인 신청, 선정 시 SNS·블로그 후기 작성",
-        deadline: "2026-11-17",
-        announce: "플랫폼 공지",
-        url: "https://modan.kr",
-        urlLabel: "캠페인 찾기",
-        source: "체험단 공유 자료(2026-11-17)",
-        checked: "2026-11-17",
-        verified: false,
-        posted: "2026-11-17",
-        tip: "오늘 마감 항목입니다. 신청 전 플랫폼에서 마감 시각과 후기 조건을 확인하세요."
       },
       {
         id: "delivery-hydra",
@@ -161,24 +266,6 @@
         verified: false,
         posted: "2026-11-17",
         tip: "의류는 사이즈 선택 항목이 있어 신청 전에 실측 표를 확인해 두면 선정 후 교환이 줄어듭니다."
-      },
-      {
-        id: "survey-lofin",
-        cat: "survey",
-        title: "지방재정365 사용자 만족도 조사",
-        host: "행정안전부 지방재정365",
-        benefit: "편의점 모바일상품권 1만 원권 · 100명 추첨",
-        condition: "국민·학계·연구기관 등 지방재정365 이용자, 24문항",
-        target: "지방재정365 이용자",
-        deadline: "2026-11-17",
-        announce: "발표일 폼 미기재",
-        url: "https://www.lofin365.go.kr/lf/prtlCom/etcFunc/mainsrnSvi/retvMainsrnQsivPpupView.do",
-        urlLabel: "설문 열기",
-        source: "지방재정365 홈페이지 설문 팝업",
-        checked: "2026-11-16",
-        verified: true,
-        posted: "2026-11-16",
-        tip: "오늘 마감입니다. 사이트에서 우리 지역 세출예산을 한 번 열어본 뒤 답하면 문항이 자연스럽게 이어집니다."
       },
       {
         id: "survey-higt",
@@ -582,17 +669,17 @@
         cat: "survey",
         title: "하반기 누리소통망(SNS) 만족도 조사",
         host: "조달청",
-        benefit: "네이버페이 포인트 1만원 · 50명 추첨",
-        condition: "0원. 조달청 누리집 이벤트 배너 → 설문 응답",
+        benefit: "네이버페이 포인트쿠폰 1만원 · 50명 추첨",
+        condition: "0원. 조달청 누리소통망 채널을 둘러본 뒤 29문항 설문 응답 (팔로우·인증샷 요구 없음)",
         deadline: "2026-11-18",
         announce: "발표 11-25",
-        url: "https://www.pps.go.kr",
-        urlLabel: "누리집 열기",
-        source: "픽모아·슈퍼투데이 공고 — 폼 직링크 미확보",
-        checked: "2026-11-17",
-        verified: false,
+        url: "https://form.naver.com/response/IhfxiYFp18Z",
+        urlLabel: "설문 열기",
+        source: "조달청 공식 블로그 공지(11/18 확인)",
+        checked: "2026-11-18",
+        verified: true,
         posted: "2026-11-17",
-        tip: "내일(11/18) 마감입니다. 오늘 안에 응모하는 편이 안전합니다."
+        tip: "오늘(11/18) 마감입니다. 유튜브·인스타그램 콘텐츠별 만족도를 묻는 문항이 많아 채널을 먼저 둘러보면 답하기 수월합니다."
       },
       {
         id: "survey-ansan",
