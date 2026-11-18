@@ -1,6 +1,6 @@
 /*!
  * 아린아빠 혜택노트 — 목록 데이터
- * 최종 확인일: 2026-11-18 (대한민국 기준) / 무료혜택 43건 · 육아템 13종
+ * 최종 확인일: 2026-11-18 (대한민국 기준) / 무료혜택 46건 · 육아템 18종
  *
  * 원칙
  *  - 참가비·제품비·배송비를 신청자가 부담하지 않는 항목만 담습니다.
@@ -25,6 +25,58 @@
     ],
 
     events: [
+      {
+        id: "survey-railway-underground",
+        cat: "survey",
+        title: "철도지하화통합개발 대국민 설문조사",
+        host: "국토교통부",
+        benefit: "커피 기프티콘 · 300명 추첨",
+        condition: "전국민 누구나, 네이버폼 9문항(객관식 8 + 자유의견). 0원",
+        deadline: "2026-11-18T18:00",
+        announce: "발표일 폼 미기재",
+        url: "https://form.naver.com/response/8CwKeH8VEcp",
+        urlLabel: "설문 열기",
+        source: "국토교통부 설문 폼(11/18 확인)",
+        checked: "2026-11-18",
+        verified: true,
+        posted: "2026-11-18",
+        tip: "오늘 18시 마감입니다. 마지막 문항만 자유 의견이고 나머지는 선택지라 5분이면 끝납니다."
+      },
+      {
+        id: "survey-bupyeong-name",
+        cat: "survey",
+        title: "새 공간 이름 선호도 조사 「나의 이름은?」",
+        host: "부평구문화재단",
+        benefit: "네이버페이 포인트 1,000원 · 1,000명 추첨",
+        condition: "전국민 누구나, 후보 이름 1개 선택 + 이유·성함·연락처. 0원",
+        deadline: "2026-11-18T17:00",
+        announce: "발표일 폼 미기재",
+        url: "https://form.naver.com/response/77Zpc6xQVFw",
+        urlLabel: "참여하기",
+        source: "부평구문화재단 설문 폼(11/18 확인)",
+        checked: "2026-11-18",
+        verified: true,
+        posted: "2026-11-18",
+        tip: "당청 인원이 1,000명으로 큰 편입니다. 후보 4개 중 하나만 고르면 참여가 끝납니다."
+      },
+      {
+        id: "survey-incheon-institute",
+        cat: "survey",
+        title: "연구성과 확산·시민 체감 연구 고객 만족도 조사",
+        host: "인천연구원",
+        benefit: "투썸플레이스 아메리카노 R · 50명 추첨",
+        condition: "전국민 누구나('이용 경험 없다' 선택지 있음), 6문항. 0원",
+        target: "인천연구원 연구·홈페이지를 접해본 시민",
+        deadline: "2026-11-18",
+        announce: "발표 11/25",
+        url: "https://www.ii.re.kr/base/board/read?boardManagementNo=1&boardNo=19364&menuLevel=2&menuNo=91",
+        urlLabel: "공지·설문 열기",
+        source: "인천연구원 공지사항(11/18 확인)",
+        checked: "2026-11-18",
+        verified: true,
+        posted: "2026-11-18",
+        tip: "공지 본문의 '인천연구원 만족도 조사 참여하기'를 누르면 설문이 열립니다. 접한 경험이 없으면 '경험이 없다'를 고르면 됩니다."
+      },
       {
         id: "survey-nia-digitaljiphyeonjeon",
         cat: "survey",
@@ -927,6 +979,66 @@
         price: "51,800원",
         reviews: 2241,
         url: "https://naver.me/xy73KmMJ"
+      },
+      {
+        key: "aff-cream",
+        name: "아기 보습크림",
+        product: "퓨어루 아기 보습크림 신생아 세라마이드 시카 침독 시어버터 진정 비건 150ml, 1개",
+        store: "퓨어루",
+        thumb: "assets/prod-cream.webp",
+        point: "세라마이드·시카·시어버터, 겨울 실내 건조 대응",
+        check: "향료·색소 무첨가 표기, 신생아 사용 가능 문구, 1회 사용량 대비 용량",
+        price: "29,160원",
+        reviews: 859,
+        url: "https://naver.me/G7NkYcjj"
+      },
+      {
+        key: "aff-hygrometer",
+        name: "온습도계",
+        product: "카스 백라이트 초정밀 디지털 온습도계 T035 온도계 습도계 벽걸이 자석 스탠드 신생아",
+        store: "선데이",
+        thumb: "assets/prod-hygrometer.webp",
+        point: "겨울 실내 습도 40~60% 확인, 야간 백라이트",
+        check: "측정 오차 표기, 백라이트 유무, 벽걸이·자석·스탠드 겸용 여부",
+        price: "21,800원",
+        reviews: 4960,
+        url: "https://naver.me/x0O3uIus"
+      },
+      {
+        key: "aff-washtub",
+        name: "아기 세탁조 클리너",
+        product: "살림백서 프로 엑티브 캡슐 세탁조 클리너 6개입 3팩 드럼세탁기 청소 통돌이 통세척",
+        store: "살림백서",
+        thumb: "assets/prod-washtub.webp",
+        point: "아기 빨래 냄새·곰팡이 관리, 캡슐형",
+        check: "드럼·통돌이 겸용 표기, 1회 사용량, 세탁조 표준 코스 사용 조건",
+        price: "21,900원",
+        reviews: 384,
+        url: "https://naver.me/xG0EpwAb"
+      },
+      {
+        key: "aff-cutlery",
+        name: "유아 스푼·포크 세트",
+        product: "옥소 토트 유아용 스푼 포크 세트 4컬러",
+        store: "옥소코리아",
+        thumb: "assets/prod-cutlery.webp",
+        point: "이유식 후기·자기주도식 시작, 그립 손잡이",
+        check: "BPA 미함유 표기, 식세기·열탕 소독 가능, 손잡이 길이와 무게",
+        price: "16,000원",
+        reviews: 3994,
+        url: "https://naver.me/Fc6Nk3jq"
+      },
+      {
+        key: "aff-romper",
+        name: "겨울 방한 우주복",
+        product: "신생아 돌 아기 후리스 우주복 방한 패딩 곰돌이 겨울 옷",
+        store: "베베코지",
+        thumb: "assets/prod-romper.webp",
+        point: "겨울 외출 한 벌로 해결, 후드 일체형",
+        check: "월령별 사이즈표, 지퍼 방향, 손목·발목 조임, 세탁 방법",
+        price: "21,000원",
+        reviews: 597,
+        url: "https://naver.me/51ukXCZg"
       }
     ]
   };

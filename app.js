@@ -138,7 +138,7 @@
     return list;
   }
 
-  /** 육아템 13종 검색 필터 (이름·핵심 포인트·체크포인트·판매처). */
+  /** 육아템 18종 검색 필터 (이름·핵심 포인트·체크포인트·판매처). */
   function filterAffiliates(items, query) {
     var q = String(query || "").trim().toLowerCase();
     if (!q) { return items.slice(); }
