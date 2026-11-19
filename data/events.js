@@ -1,6 +1,6 @@
 /*!
  * 아린아빠 혜택노트 — 목록 데이터
- * 최종 확인일: 2026-11-18 (대한민국 기준) / 무료혜택 46건 · 육아템 18종
+ * 최종 확인일: 2026-11-19 (대한민국 기준) / 무료혜택 42건 · 육아템 18종
  *
  * 원칙
  *  - 참가비·제품비·배송비를 신청자가 부담하지 않는 항목만 담습니다.
@@ -14,7 +14,7 @@
   "use strict";
 
   var DATA = {
-    updatedAt: "2026-11-18",
+    updatedAt: "2026-11-19",
 
     categories: [
       { id: "all", label: "전체" },
@@ -26,56 +26,72 @@
 
     events: [
       {
-        id: "survey-railway-underground",
+        id: "survey-cultureportal-2nd",
         cat: "survey",
-        title: "철도지하화통합개발 대국민 설문조사",
-        host: "국토교통부",
-        benefit: "커피 기프티콘 · 300명 추첨",
-        condition: "전국민 누구나, 네이버폼 9문항(객관식 8 + 자유의견). 0원",
-        deadline: "2026-11-18T18:00",
+        title: "2026년 2차 문화포털 이용자 만족도 조사",
+        host: "문화체육관광부 문화포털",
+        benefit: "에어팟 프로 1명 · 네이버페이 1만 원권 100명 · 커피 쿠폰 150명 (총 251명)",
+        condition: "전국민 누구나, 온라인 설문 26단계. 0원",
+        deadline: "2026-11-20",
         announce: "발표일 폼 미기재",
-        url: "https://form.naver.com/response/8CwKeH8VEcp",
-        urlLabel: "설문 열기",
-        source: "국토교통부 설문 폼(11/18 확인)",
-        checked: "2026-11-18",
-        verified: true,
-        posted: "2026-11-18",
-        tip: "오늘 18시 마감입니다. 마지막 문항만 자유 의견이고 나머지는 선택지라 5분이면 끝납니다."
-      },
-      {
-        id: "survey-bupyeong-name",
-        cat: "survey",
-        title: "새 공간 이름 선호도 조사 「나의 이름은?」",
-        host: "부평구문화재단",
-        benefit: "네이버페이 포인트 1,000원 · 1,000명 추첨",
-        condition: "전국민 누구나, 후보 이름 1개 선택 + 이유·성함·연락처. 0원",
-        deadline: "2026-11-18T17:00",
-        announce: "발표일 폼 미기재",
-        url: "https://form.naver.com/response/77Zpc6xQVFw",
-        urlLabel: "참여하기",
-        source: "부평구문화재단 설문 폼(11/18 확인)",
-        checked: "2026-11-18",
-        verified: true,
-        posted: "2026-11-18",
-        tip: "당청 인원이 1,000명으로 큰 편입니다. 후보 4개 중 하나만 고르면 참여가 끝납니다."
-      },
-      {
-        id: "survey-incheon-institute",
-        cat: "survey",
-        title: "연구성과 확산·시민 체감 연구 고객 만족도 조사",
-        host: "인천연구원",
-        benefit: "투썸플레이스 아메리카노 R · 50명 추첨",
-        condition: "전국민 누구나('이용 경험 없다' 선택지 있음), 6문항. 0원",
-        target: "인천연구원 연구·홈페이지를 접해본 시민",
-        deadline: "2026-11-18",
-        announce: "발표 11/25",
-        url: "https://www.ii.re.kr/base/board/read?boardManagementNo=1&boardNo=19364&menuLevel=2&menuNo=91",
+        url: "https://www.culture.go.kr/portal/bbs/B0000101/view.do?menuNo=200031&nttId=2474",
         urlLabel: "공지·설문 열기",
-        source: "인천연구원 공지사항(11/18 확인)",
-        checked: "2026-11-18",
+        source: "문화포털 공지사항(11/19 확인)",
+        checked: "2026-11-19",
         verified: true,
-        posted: "2026-11-18",
-        tip: "공지 본문의 '인천연구원 만족도 조사 참여하기'를 누르면 설문이 열립니다. 접한 경험이 없으면 '경험이 없다'를 고르면 됩니다."
+        posted: "2026-11-19",
+        tip: "당첨 인원이 251명으로 큰 편입니다. 문항 수는 많지만 대부분 선택지라 10분 안에 끝나고, 첫 방문자는 '이번 계기로 처음 방문'을 고르면 됩니다."
+      },
+      {
+        id: "survey-gnebi-slogan",
+        cat: "survey",
+        title: "경남교육 브랜드슬로건 공모전 선호도 조사",
+        host: "경상남도교육청",
+        benefit: "BBQ 치킨 20명 · 메가커피 50명 · CU 모바일상품권 200명 (총 270명)",
+        condition: "전국민 누구나, 후보 슬로건 1개 선택 + 이름·연락처. 0원",
+        deadline: "2026-11-20",
+        announce: "공모전 페이지 공지",
+        url: "https://www.gnebi.kr/preference-survey",
+        urlLabel: "선호도 조사 참여",
+        source: "경남교육청 공모전 홈페이지(11/19 확인)",
+        checked: "2026-11-19",
+        verified: true,
+        posted: "2026-11-19",
+        tip: "후보 중 마음에 드는 슬로건 하나만 고르면 끝나는 1분 조사입니다. 문자 인증 없이 이름·연락처만 입력하고 접수번호가 나옵니다."
+      },
+      {
+        id: "survey-womenhistory",
+        cat: "survey",
+        title: "국립여성사전시관 누리집 이용객 만족도 설문",
+        host: "국립여성사전시관(성평등가족부)",
+        benefit: "모바일 상품권 1만 원권 · 50명 추첨",
+        condition: "누리집 방문 경험 있는 국민 누구나, 네이버폼 19문항. 0원",
+        deadline: "2026-11-23",
+        announce: "개별 문자 안내",
+        url: "https://form.naver.com/response/F2bdd7Tb5NB",
+        urlLabel: "설문 열기",
+        source: "국립여성사전시관 설문 폼(11/19 확인)",
+        checked: "2026-11-19",
+        verified: true,
+        posted: "2026-11-19",
+        tip: "누리집(eherstory.mogef.go.kr)을 한 번 둘러본 뒤 답하면 됩니다. 첫 방문이면 방문 횟수 '방문한 적 없음'을 고르고 관람정보를 봤다고 답하면 됩니다."
+      },
+      {
+        id: "delivery-dentyx",
+        cat: "delivery",
+        title: "[덴틱스] 칫솔살균기 0차 체험단",
+        host: "택배의여왕 × 덴틱스",
+        benefit: "칫솔살균기 2구 1대 (10명 모집)",
+        condition: "업체 배송형, 네이버 블로그 리뷰(사진 15장·영상 1개·800자 이상·키워드). 0원",
+        deadline: "2026-11-25",
+        announce: "발표 11-26, 리뷰 11-27~12-11",
+        url: "https://tqueens.net/taste/1660064",
+        urlLabel: "캠페인 보기",
+        source: "택배의여왕 캠페인(11/19 확인)",
+        checked: "2026-11-19",
+        verified: true,
+        posted: "2026-11-19",
+        tip: "신청 6명 / 모집 10명으로 경쟁이 낮은 편입니다. 선정되면 칫솔살균기 실사용 사진 15장과 영상 1개를 준비해야 합니다."
       },
       {
         id: "survey-nia-digitaljiphyeonjeon",
@@ -94,41 +110,6 @@
         verified: true,
         posted: "2026-11-18",
         tip: "추첨이 아니라 선착순이라 마감 전에 제출해야 합니다. 플랫폼에서 관심 주제를 한 번 검색해 본 뒤 답하면 문항이 자연스럽게 이어집니다."
-      },
-      {
-        id: "survey-kfis-story",
-        cat: "survey",
-        title: "「스토리가 있는 재정」 주제 수요조사",
-        host: "한국재정정보원",
-        benefit: "배달의민족 상품권 1만 원권(10명) · 5천 원권(80명)",
-        condition: "열린재정 이용자, 네이버폼에 궁금한 재정 질문 작성. 0원",
-        target: "열린재정 이용자",
-        deadline: "2026-11-18",
-        announce: "발표 11/30",
-        url: "https://naver.me/539ettUB",
-        urlLabel: "질문 남기기",
-        source: "한국재정정보원 이벤트 안내(11/18 확인)",
-        checked: "2026-11-18",
-        verified: true,
-        posted: "2026-11-18",
-        tip: "질문을 성의 있게 쓰는 것이 핵심입니다. 육아·주거처럼 생활과 닿은 재정 주제로 물으면 다음 카드뉴스 주제로도 채택될 수 있습니다."
-      },
-      {
-        id: "survey-seoul-air",
-        cat: "survey",
-        title: "대기질 정보 알림서비스 신청 이벤트",
-        host: "서울특별시 대기환경정보",
-        benefit: "메가커피 모바일 쿠폰 · 1,000명 추첨",
-        condition: "대기질 알림서비스(문자·알림톡) 신청자 대상 추첨. 0원",
-        deadline: "2026-11-18",
-        announce: "서울시 공지",
-        url: "https://cleanair.seoul.go.kr/citizen/sms",
-        urlLabel: "알림서비스 신청",
-        source: "모아득·서울시 대기환경정보(11/18 확인)",
-        checked: "2026-11-18",
-        verified: false,
-        posted: "2026-11-18",
-        tip: "신청하면 미세먼지·오존 예보를 문자나 알림톡으로 계속 받게 됩니다. 알림을 원치 않으면 신청하지 마세요."
       },
       {
         id: "survey-pps-stats",
@@ -250,23 +231,6 @@
         verified: true,
         posted: "2026-11-13",
         tip: "제품값이 큰 만큼 리뷰 미션이 무겁습니다. 사진 15장과 영상 1개를 만들 시간이 있는지 먼저 계산하세요."
-      },
-      {
-        id: "delivery-hydra",
-        cat: "delivery",
-        title: "하이드라 베리어 에센스 배송형 체험단",
-        host: "리뷰플레이스",
-        benefit: "에센스 1개 제공 (0원 배송형)",
-        condition: "플랫폼 가입 후 신청, 블로그 리뷰 미션",
-        deadline: "2026-11-18",
-        announce: "플랫폼 공지",
-        url: "https://www.reviewplace.co.kr",
-        urlLabel: "캠페인 찾기",
-        source: "체험단 공유 자료(2026-11-17)",
-        checked: "2026-11-17",
-        verified: false,
-        posted: "2026-11-17",
-        tip: "플랫폼 상단 검색창에 제품명을 넣으면 해당 캠페인으로 바로 이동합니다. 리뷰 분량도 함께 확인하세요."
       },
       {
         id: "delivery-arnicap",
@@ -507,23 +471,6 @@
         tip: "방문한 적이 없으면 ‘방문한 적 없음’으로 사실대로 답하면 됩니다. 첫 방문자도 응모 대상입니다."
       },
       {
-        id: "contest-column",
-        cat: "contest",
-        title: "제36회 시장경제칼럼 공모전",
-        host: "재단법인 자유기업원",
-        benefit: "대상 30만 원 · 최우수 15만 원 · 우수 5만 원 + 수상자 전원 도서 (응모 무료)",
-        condition: "시장경제에 관심 있는 누구나, 2,000자 내외 칼럼 1편, 온라인 폼 제출",
-        deadline: "2026-11-18T17:00",
-        announce: "발표 11/27 · 시상식 12/4 비대면",
-        url: "https://forms.gle/zLrZouNBVrH5Jew16",
-        urlLabel: "응모 폼 열기",
-        source: "자유기업원 공고(cfe.org)",
-        checked: "2026-11-17",
-        verified: true,
-        posted: "2026-11-09",
-        tip: "공고에 ‘마감 전날부터 접속이 몰린다’고 적혀 있습니다. 18일 오후 5시 마감이니 한 시간 전에는 제출하세요."
-      },
-      {
         id: "contest-bus",
         cat: "contest",
         title: "저상 좌석버스 네이밍·아이콘 공모전",
@@ -715,23 +662,6 @@
         verified: true,
         posted: "2026-11-17",
         tip: "이번 목록에서 당첨 인원이 가장 많습니다(250명). 건강모아에서 건강검진·건강정보를 한 번 조회한 뒤 응답하세요."
-      },
-      {
-        id: "survey-pps-sns",
-        cat: "survey",
-        title: "하반기 누리소통망(SNS) 만족도 조사",
-        host: "조달청",
-        benefit: "네이버페이 포인트쿠폰 1만원 · 50명 추첨",
-        condition: "0원. 조달청 누리소통망 채널을 둘러본 뒤 29문항 설문 응답 (팔로우·인증샷 요구 없음)",
-        deadline: "2026-11-18",
-        announce: "발표 11-25",
-        url: "https://form.naver.com/response/IhfxiYFp18Z",
-        urlLabel: "설문 열기",
-        source: "조달청 공식 블로그 공지(11/18 확인)",
-        checked: "2026-11-18",
-        verified: true,
-        posted: "2026-11-17",
-        tip: "오늘(11/18) 마감입니다. 유튜브·인스타그램 콘텐츠별 만족도를 묻는 문항이 많아 채널을 먼저 둘러보면 답하기 수월합니다."
       },
       {
         id: "survey-ansan",
