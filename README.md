@@ -16,7 +16,7 @@ site/
 ## 1. 데이터 갱신 — `data/events.js`
 
 목록에 항목을 넣거나 빼는 곳은 이 파일 하나입니다. 카드·탭 개수·통계는 자동으로 다시 계산됩니다.
-현재 **무료혜택 46건 · 육아템 18종**(2026-11-18 기준)이 들어 있습니다.
+현재 **무료혜택 49건 · 육아템 18종**(2026-11-20 기준)이 들어 있습니다.
 
 ```js
 {
@@ -126,7 +126,7 @@ site/
 ```bash
 python3 site/tools/validate_site.py               # HTML/CSS/JS 구조 + duktape 동작 검사
 <node> site/tools/test_site.js                    # Node 로 필터·검색·정렬·표시형식 54건
-<node> site/tools/test_dom.js                     # 가짜 DOM 으로 렌더·보기 탭·모달·육아템 카드 배선 46건
+<node> site/tools/test_dom.js                     # 가짜 DOM 으로 렌더·보기 탭·모달·육아템 카드 배선
 <node> site/tools/make-noscript.js                # 데이터를 고친 뒤 <noscript> 목록 재생성
 ```
 
