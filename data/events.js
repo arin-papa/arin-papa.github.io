@@ -26,6 +26,23 @@
 
     events: [
       {
+        id: "survey-rural6-convergence",
+        cat: "survey",
+        title: "2026년 농촌융복합산업 홈페이지 만족도조사",
+        host: "농림축산식품부·한국농어촌공사 농촌융복합산업",
+        benefit: "신세계상품권 4만 원 · 배달의민족 2만 원 · CU 1만 원 · GS25 5천 원 · 메가커피 2천 원 (총 250명 추첨)",
+        condition: "농촌융복합.com 방문자 누구나(첫 방문 선택 가능), 설문 2페이지·1인 1회. 0원",
+        deadline: "2026-11-22T24:00",
+        announce: "추첨 후 폼에 적은 번호로 발송",
+        url: "https://naver.me/5qLpFSQd",
+        urlLabel: "설문 열기",
+        source: "농촌융복합산업 이벤트 페이지(11/21 확인)",
+        checked: "2026-11-21",
+        verified: true,
+        posted: "2026-11-21",
+        tip: "경품이 250명으로 큰 편이고 첫 방문자도 응답할 수 있습니다. 방문 빈도에서 '첫 방문'을 고르면 이후 문항은 이용 경험 없이도 답할 수 있게 구성돼 있습니다."
+      },
+      {
         id: "survey-hanyangdoseong-2026h2",
         cat: "survey",
         title: "2026년 하반기 서울 한양도성 누리집 이용자 만족도 조사",
