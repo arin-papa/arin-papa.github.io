@@ -1,6 +1,6 @@
 /*!
  * 아린아빠 혜택노트 — 목록 데이터
- * 최종 확인일: 2026-11-20 (대한민국 기준) / 무료혜택 49건 · 육아템 18종
+ * 최종 확인일: 2026-11-21 (대한민국 기준) / 무료혜택 49건 · 육아템 18종
  *
  * 원칙
  *  - 참가비·제품비·배송비를 신청자가 부담하지 않는 항목만 담습니다.
@@ -14,7 +14,7 @@
   "use strict";
 
   var DATA = {
-    updatedAt: "2026-11-20",
+    updatedAt: "2026-11-21",
 
     categories: [
       { id: "all", label: "전체" },
@@ -26,38 +26,106 @@
 
     events: [
       {
-        id: "survey-cultureportal-2nd",
+        id: "survey-hanyangdoseong-2026h2",
         cat: "survey",
-        title: "2026년 2차 문화포털 이용자 만족도 조사",
-        host: "문화체육관광부 문화포털",
-        benefit: "에어팟 프로 1명 · 네이버페이 1만 원권 100명 · 커피 쿠폰 150명 (총 251명)",
-        condition: "전국민 누구나, 온라인 설문 26단계. 0원",
-        deadline: "2026-11-20",
-        announce: "발표일 폼 미기재",
-        url: "https://www.culture.go.kr/portal/bbs/B0000101/view.do?menuNo=200031&nttId=2474",
-        urlLabel: "공지·설문 열기",
-        source: "문화포털 공지사항(11/19 확인)",
-        checked: "2026-11-19",
+        title: "2026년 하반기 서울 한양도성 누리집 이용자 만족도 조사",
+        host: "서울특별시 문화본부 문화유산과",
+        benefit: "메가MGC 아이스 메가리카노 모바일 쿠폰 (100명 추첨)",
+        condition: "서울한양도성 누리집 방문자 누구나, 7문항(객관식 6·주관식 1) + 휴대폰 번호. 0원",
+        deadline: "2026-11-22",
+        announce: "2026-11-26 (누리집 새소식)",
+        url: "https://m.site.naver.com/2k6kv",
+        urlLabel: "설문 열기",
+        source: "서울 한양도성 새소식(11/21 확인)",
+        checked: "2026-11-21",
         verified: true,
-        posted: "2026-11-19",
-        tip: "당첨 인원이 251명으로 큰 편입니다. 문항 수는 많지만 대부분 선택지라 10분 안에 끝나고, 첫 방문자는 '이번 계기로 처음 방문'을 고르면 됩니다."
+        posted: "2026-11-21",
+        tip: "설문 첫 화면에 경품 응모용 휴대폰 번호 입력 단계가 따로 있습니다. 번호를 넣지 않으면 설문은 제출되지만 추첨에서는 빠지고, 같은 번호는 1건만 인정됩니다."
       },
       {
-        id: "survey-gnebi-slogan",
+        id: "survey-bukgu-quiz-41",
         cat: "survey",
-        title: "경남교육 브랜드슬로건 공모전 선호도 조사",
-        host: "경상남도교육청",
-        benefit: "BBQ 치킨 20명 · 메가커피 50명 · CU 모바일상품권 200명 (총 270명)",
-        condition: "전국민 누구나, 후보 슬로건 1개 선택 + 이름·연락처. 0원",
-        deadline: "2026-11-20",
-        announce: "공모전 페이지 공지",
-        url: "https://www.gnebi.kr/preference-survey",
-        urlLabel: "선호도 조사 참여",
-        source: "경남교육청 공모전 홈페이지(11/19 확인)",
-        checked: "2026-11-19",
+        title: "전남광주통합특별시 북구 제41회 정책퀴즈",
+        host: "전남광주통합특별시 북구",
+        benefit: "모바일 상품권 5,000원 (30명 추첨)",
+        condition: "주민·홈페이지 방문자 누구나, 3지선다 1문항 + 이름·휴대폰. 0원",
+        deadline: "2026-11-22T23:59",
+        announce: "매주 월요일 게시판 공지, 매월 초 문자 일괄 발송",
+        url: "https://bukgu.gwangju.kr/policyQuizForm.es?mid=a10202140100&pq_seq=286",
+        urlLabel: "퀴즈 참여",
+        source: "북구 홈페이지 정책퀴즈(11/21 확인)",
+        checked: "2026-11-21",
         verified: true,
-        posted: "2026-11-19",
-        tip: "후보 중 마음에 드는 슬로건 하나만 고르면 끝나는 1분 조사입니다. 문자 인증 없이 이름·연락처만 입력하고 접수번호가 나옵니다."
+        posted: "2026-11-21",
+        tip: "매주 월요일 새 문제가 올라오는 상시 이벤트입니다. 정답은 문제 아래 힌트에 링크된 북구 소식에서 확인할 수 있습니다."
+      },
+      {
+        id: "survey-mois-local-regulation",
+        cat: "survey",
+        title: "2026년 지방규제합리화 우수사례 경진대회 국민심사",
+        host: "행정안전부",
+        benefit: "노트북 1명 · 태블릿PC 1명 · CJ기프트카드 1만 원권 50명 · 커피 쿠폰 400명 (총 452명)",
+        condition: "전 국민 누구나, 사례 10건 중 선택 투표. 모두의 광장(modu.go.kr) 로그인 필요. 0원",
+        deadline: "2026-11-30T23:59",
+        announce: "투표 종료 후 1주일 이내",
+        url: "https://modu.go.kr/fron/jdgmn/jdgmnView.do?menu_id=393&qustnr_id=ca79b2f1456340ec9894847c50747a0d",
+        urlLabel: "국민심사 열기",
+        source: "행정안전부 국민심사 공고(11/21 확인)",
+        checked: "2026-11-21",
+        verified: true,
+        posted: "2026-11-21",
+        tip: "경품 452명으로 이번 달 공공 이벤트 중 가장 큰 규모입니다. 다만 모두의 광장 회원 로그인이 있어야 투표가 저장됩니다."
+      },
+      {
+        id: "survey-kspo-idea",
+        cat: "survey",
+        title: "KSPO 신규사업 발굴 아이디어 공모 국민심사",
+        host: "서울올림픽기념국민체육진흥공단",
+        benefit: "5,000원 상당 음료 기프티콘 (100명 추첨)",
+        condition: "전 국민 누구나, 8개 아이디어 중 2개 선택. 모두의 광장 로그인 필요. 0원",
+        deadline: "2026-11-24T23:59",
+        announce: "2026-11-30까지 개별 연락",
+        url: "https://modu.go.kr/fron/jdgmn/jdgmnView.do?menu_id=393&qustnr_id=ad8b2fec1f24433f85203953e7700d65",
+        urlLabel: "국민심사 열기",
+        source: "소통24 국민심사(11/21 확인)",
+        checked: "2026-11-21",
+        verified: true,
+        posted: "2026-11-21",
+        tip: "참여자 2,300명대에 경품 100명이라 경쟁률이 낮은 편입니다. 발표는 당첨자에게만 개별 연락됩니다."
+      },
+      {
+        id: "survey-ipet-tech-vote",
+        cat: "survey",
+        title: "2026 농식품 기술상용화 우수성과 국민투표",
+        host: "농림식품기술기획평가원",
+        benefit: "커피 쿠폰 (200명 추첨)",
+        condition: "국민 누구나, 스마트농업·그린바이오·푸드테크 각 1건씩 총 3건 투표. 모두의 광장 로그인 필요. 0원",
+        deadline: "2026-11-30T15:00",
+        announce: "개별 안내",
+        url: "https://modu.go.kr/fron/jdgmn/jdgmnView.do?menu_id=393&qustnr_id=f8772134e8a44ee194218261dfae53c2",
+        urlLabel: "국민투표 열기",
+        source: "소통24 국민심사(11/21 확인)",
+        checked: "2026-11-21",
+        verified: true,
+        posted: "2026-11-21",
+        tip: "분야별로 한 건씩 골라야 제출됩니다. 3개 분야를 모두 채우지 않으면 응모로 인정되지 않습니다."
+      },
+      {
+        id: "survey-customs-training",
+        cat: "survey",
+        title: "관세국경인재개발원 2차 기관 인지도 설문조사",
+        host: "관세청 관세국경인재개발원",
+        benefit: "편의점 모바일 상품권 (50명 추첨)",
+        condition: "국민 누구나(기관을 몰라도 참여 가능), 5분 내외 설문 + 이름·휴대폰. 국민생각함 로그인 필요. 0원",
+        deadline: "2026-11-29T24:00",
+        announce: "개별 안내",
+        url: "https://www.epeople.go.kr/nep/thk/subj/SubjThinkList.npaid",
+        urlLabel: "국민생각함 열기",
+        source: "국민생각함 이벤트(11/21 확인)",
+        checked: "2026-11-21",
+        verified: true,
+        posted: "2026-11-21",
+        tip: "설문 제출만으로 끝나지 않고, 제출 후 뜨는 '이벤트 참여' 팝업까지 눌러야 응모가 완료됩니다."
       },
       {
         id: "survey-womenhistory",
@@ -92,24 +160,6 @@
         verified: true,
         posted: "2026-11-19",
         tip: "신청 6명 / 모집 10명으로 경쟁이 낮은 편입니다. 선정되면 칫솔살균기 실사용 사진 15장과 영상 1개를 준비해야 합니다."
-      },
-      {
-        id: "survey-nia-digitaljiphyeonjeon",
-        cat: "survey",
-        title: "디지털집현전 이용자 만족도 조사 (선착순 200명)",
-        host: "한국지능정보사회진흥원(NIA)·과학기술정보통신부",
-        benefit: "1만 원권 커피 쿠폰 · 선착순 200명",
-        condition: "디지털집현전(k-knowledge.kr) 이용자 누구나, 온라인 설문. 0원",
-        target: "디지털집현전을 이용해 본 국민",
-        deadline: "2026-11-20T22:30",
-        announce: "선착순 마감 (별도 추첨 없음)",
-        url: "https://form.naver.com/response/E0uBSE1wYGI",
-        urlLabel: "설문 열기",
-        source: "콘테스트코리아·NIA 공고(11/18 확인)",
-        checked: "2026-11-18",
-        verified: true,
-        posted: "2026-11-18",
-        tip: "추첨이 아니라 선착순이라 마감 전에 제출해야 합니다. 플랫폼에서 관심 주제를 한 번 검색해 본 뒤 답하면 문항이 자연스럽게 이어집니다."
       },
       {
         id: "survey-pps-stats",
@@ -198,41 +248,6 @@
         tip: "아기 생년월일과 월령(200일)을 정확히 적어 두면 선정에 유리합니다. 신청서 이메일은 마이페이지에 등록된 주소와 같아야 하니 먼저 확인하세요."
       },
       {
-        id: "baby-bebesup",
-        cat: "baby",
-        title: "11월 마음박스(52회차) — 7개 브랜드 육아 선물 상자",
-        host: "베베숲",
-        benefit: "베베숲·그레이트북스·벨레다·브리스틱·앱솔루트·베베쿡·므므브 제품 한 상자 · 추첨 증정",
-        condition: "예비맘·출산맘 대상, 0원. 회원가입 + 출생 증빙(가족관계증명서 등) 첨부 필요",
-        target: "예비맘·출산맘 (출생 증빙 필요)",
-        deadline: "2026-11-20",
-        announce: "매월 1~20일 진행 · 발표는 사이트 공지",
-        url: "https://www.bebesup.co.kr/proc/heartbox",
-        urlLabel: "이벤트 페이지 열기",
-        source: "베베숲 공식 이벤트 페이지(11/17 확인)",
-        checked: "2026-11-17",
-        verified: true,
-        posted: "2026-11-01",
-        tip: "매달 1일부터 20일까지만 열립니다. 계정 명의와 출생 증빙의 이름이 같아야 하니 부모 명의로 준비하세요."
-      },
-      {
-        id: "delivery-arnicap",
-        cat: "delivery",
-        title: "아르니캡 온열파스 체험단",
-        host: "아싸뷰",
-        benefit: "온열파스 제품 제공 (0원 배송형)",
-        condition: "플랫폼 가입 후 신청, 후기 작성",
-        deadline: "2026-11-20",
-        announce: "플랫폼 공지",
-        url: "https://assaview.co.kr",
-        urlLabel: "캠페인 찾기",
-        source: "체험단 공유 자료(2026-11-17)",
-        checked: "2026-11-17",
-        verified: false,
-        posted: "2026-11-17",
-        tip: "아싸뷰는 매일 정오에 신규 캠페인이 열립니다. 정오 직후 신청하면 경쟁이 덜합니다."
-      },
-      {
         id: "delivery-godfire",
         cat: "delivery",
         title: "갓파이어 소화패치 체험단",
@@ -265,40 +280,6 @@
         verified: false,
         posted: "2026-11-17",
         tip: "의류는 사이즈 선택 항목이 있어 신청 전에 실측 표를 확인해 두면 선정 후 교환이 줄어듭니다."
-      },
-      {
-        id: "survey-maesil",
-        cat: "survey",
-        title: "유기농 매실가공식품 디자인 선호도 조사",
-        host: "광양원예농협",
-        benefit: "메가커피 아메리카노 모바일 쿠폰 · 100명 추첨",
-        condition: "1분 설문(시안 선택 + 성별·연령·지역·휴대폰), 로그인·본인인증 없음",
-        deadline: "2026-11-20T23:59",
-        announce: "발표 11/21 (로또번호 추첨)",
-        url: "https://is.gd/maesilcontest",
-        urlLabel: "설문 열기",
-        source: "광양원예농협 설문 페이지",
-        checked: "2026-11-15",
-        verified: true,
-        posted: "2026-11-15",
-        tip: "로그인도 본인인증도 없어 1분이면 끝납니다. 발표가 다음 날이라 결과 확인도 빠릅니다."
-      },
-      {
-        id: "survey-kised",
-        cat: "survey",
-        title: "인지도·이미지 및 SNS 채널 이용 실태조사",
-        host: "창업진흥원",
-        benefit: "공차 블랙밀크티+펄 L + 그릴드 핫치킨 브리또 · 30명",
-        condition: "대한민국 국민 누구나, 네이버폼 응답",
-        deadline: "2026-11-20T23:59",
-        announce: "발표 11/26",
-        url: "https://form.naver.com/response/F5Cas8Ha3EL",
-        urlLabel: "설문 열기",
-        source: "창업진흥원 네이버폼",
-        checked: "2026-11-14",
-        verified: true,
-        posted: "2026-11-14",
-        tip: "마감이 21일 0시입니다. 20일 밤까지는 제출을 마쳐야 응모로 인정됩니다."
       },
       {
         id: "survey-kalit",
@@ -630,23 +611,6 @@
         tip: "이번 목록에서 당첨 인원이 가장 많습니다(250명). 건강모아에서 건강검진·건강정보를 한 번 조회한 뒤 응답하세요."
       },
       {
-        id: "survey-ansan",
-        cat: "survey",
-        title: "2026 설문 이벤트",
-        host: "안산시",
-        benefit: "투썸플레이스 소금 프레첼 베이글 + 아메리카노 · 100명 추첨",
-        condition: "0원. 안산시 누리집 이벤트 배너 → 설문",
-        deadline: "2026-11-20",
-        announce: "발표 11-26",
-        url: "https://www.ansan.go.kr",
-        urlLabel: "누리집 열기",
-        source: "픽모아 이벤트 공고",
-        checked: "2026-11-17",
-        verified: false,
-        posted: "2026-11-17",
-        tip: "경품이 베이글 세트로 실물에 가깝습니다(100명)."
-      },
-      {
         id: "survey-gwangyang-job",
         cat: "survey",
         title: "굿잡광양 서비스 만족도 조사",
@@ -699,23 +663,6 @@
         verified: false,
         posted: "2026-11-17",
         tip: "SNS 구독과 인증샷 첨부가 조건인 경우가 많습니다. 폼 첫 화면에서 조건을 먼저 확인하세요."
-      },
-      {
-        id: "survey-csi-kalit",
-        cat: "survey",
-        title: "건축분쟁전문위원회 종합관리시스템 만족도 조사",
-        host: "국토안전관리원",
-        benefit: "모바일 기프티콘 · 100명 추첨",
-        condition: "0원. csi.go.kr 공지에서 설문 링크를 열어 응답",
-        deadline: "2026-11-20",
-        announce: "발표 11-25",
-        url: "https://www.csi.go.kr",
-        urlLabel: "누리집 열기",
-        source: "모아득 공유 정보 — 원문 재확인 필요",
-        checked: "2026-11-17",
-        verified: false,
-        posted: "2026-11-17",
-        tip: "설문 폼 직링크가 공지 안에 있습니다. 배너가 보이지 않으면 공지사항에서 '만족도'를 검색하세요."
       },
       {
         id: "survey-kamco-vote",
