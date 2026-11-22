@@ -1,6 +1,6 @@
 /*!
  * 아린아빠 혜택노트 — 목록 데이터
- * 최종 확인일: 2026-11-21 (대한민국 기준) / 무료혜택 49건 · 육아템 18종
+ * 최종 확인일: 2026-11-22 (대한민국 기준) / 무료혜택 51건 · 육아템 18종
  *
  * 원칙
  *  - 참가비·제품비·배송비를 신청자가 부담하지 않는 항목만 담습니다.
@@ -14,7 +14,7 @@
   "use strict";
 
   var DATA = {
-    updatedAt: "2026-11-21",
+    updatedAt: "2026-11-22",
 
     categories: [
       { id: "all", label: "전체" },
@@ -25,6 +25,74 @@
     ],
 
     events: [
+      {
+        id: "survey-kocef-2026",
+        cat: "survey",
+        title: "2026 한국도자재단 홈페이지 설문 이벤트",
+        host: "한국도자재단",
+        benefit: "스타벅스 카페 아메리카노 기프티콘 · 200명 추첨",
+        condition: "재단 홈페이지 본인인증 로그인 후 이벤트 페이지에서 설문 응답. 0원",
+        deadline: "2026-11-24",
+        announce: "2026-12-03 (홈페이지 공지)",
+        url: "https://www.kocef.org/06center/2026/event.asp",
+        urlLabel: "설문 열기",
+        source: "한국도자재단 공지(공고 2026-174호, 11/22 확인)",
+        checked: "2026-11-22",
+        verified: true,
+        posted: "2026-11-22",
+        tip: "200명을 뽑는 넉넉한 추첨이지만, 참여하려면 재단 홈페이지에서 본인인증 로그인을 먼저 해야 합니다. 로그인 없이 바로 응답하는 폼은 아닙니다."
+      },
+      {
+        id: "survey-jgfez-emoji",
+        cat: "survey",
+        title: "전남광주경제자유구역청 이모지퀴즈 이벤트",
+        host: "전남광주경제자유구역청",
+        benefit: "네이버페이 2,000원권 · 200명 추첨",
+        condition: "블로그 이웃추가 또는 링크드인 팔로우 후, 인증샷과 5글자 정답을 구글폼으로 제출. 0원",
+        deadline: "2026-11-29",
+        announce: "12월 1주차 (블로그·링크드인 공지)",
+        url: "https://forms.gle/KAtBGdC6DrfcYxA57",
+        urlLabel: "퀴즈 폼 열기",
+        source: "전남광주경제자유구역청 이벤트 공지(11/22 확인)",
+        checked: "2026-11-22",
+        verified: true,
+        posted: "2026-11-22",
+        tip: "정답은 5글자이고 힌트는 주최 측 블로그 게시물에 있습니다. 팔로우 인증샷이 빠지면 추첨에서 제외되니 캡처를 함께 올려야 합니다."
+      },
+      {
+        id: "survey-blackhuz-aitv",
+        cat: "survey",
+        title: "AI TV 경험 인터뷰 설문",
+        host: "블랙후즈",
+        benefit: "네이버페이 포인트 5,000원 · 100명 추첨",
+        condition: "AI TV 사용 경험을 묻는 인터뷰형 설문(약 20분)을 끝까지 마치고 이메일 입력. 0원",
+        deadline: "2026-11-29",
+        announce: "개별 연락 (12/17 이내 지급)",
+        url: "https://signal.askcuri.com/v/030db12b-8106-4cfe-bb30-5f72bafe6a82",
+        urlLabel: "설문 열기",
+        source: "블랙후즈 이벤트 안내(11/22 확인)",
+        checked: "2026-11-22",
+        verified: true,
+        posted: "2026-11-22",
+        tip: "20분 정도 걸리고 일부 문항은 음성으로 답합니다. 마지막에 이메일을 넣어야 추첨 대상이 되고, 성의 없는 응답은 제외됩니다."
+      },
+      {
+        id: "survey-kostat-medical-quiz",
+        cat: "survey",
+        title: "의학 속 데이터 이야기 퀴즈 이벤트",
+        host: "국가데이터처·디지털에볼루션",
+        benefit: "네이버페이 5,000원 모바일 쿠폰 · 40명 추첨",
+        condition: "국가데이터처 유튜브 구독·영상 좋아요 + 영상 댓글로 퀴즈 정답과 시청 소감 작성. 0원",
+        deadline: "2026-12-02",
+        announce: "2026-12-09 (유튜브 커뮤니티·인스타그램·블로그)",
+        url: "https://youtu.be/vLcXqdzwsA4",
+        urlLabel: "영상 보기",
+        source: "국가데이터처 이벤트 공지(11/22 확인)",
+        checked: "2026-11-22",
+        verified: true,
+        posted: "2026-11-22",
+        tip: "정답은 영상 4분 53초부터 나오는 통계 이야기에 있습니다. 댓글은 반드시 유튜브 영상에 남겨야 하고, 공지 게시글 댓글로는 인정되지 않습니다."
+      },
       {
         id: "survey-rural6-convergence",
         cat: "survey",
