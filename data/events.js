@@ -1,6 +1,6 @@
 /*!
  * 아린아빠 혜택노트 — 목록 데이터
- * 최종 확인일: 2026-11-22 (대한민국 기준) / 무료혜택 51건 · 육아템 18종
+ * 최종 확인일: 2026-11-23 (대한민국 기준) / 무료혜택 44건 · 육아템 18종
  *
  * 원칙
  *  - 참가비·제품비·배송비를 신청자가 부담하지 않는 항목만 담습니다.
@@ -14,7 +14,7 @@
   "use strict";
 
   var DATA = {
-    updatedAt: "2026-11-22",
+    updatedAt: "2026-11-23",
 
     categories: [
       { id: "all", label: "전체" },
@@ -25,6 +25,75 @@
     ],
 
     events: [
+      {
+        id: "survey-hira-slogan-vote",
+        cat: "survey",
+        title: "건강보험심사평가원 슬로건 공모전 온라인 투표 이벤트",
+        host: "건강보험심사평가원",
+        benefit: "메가커피 아메리카노 쿠폰 200명 · 히토 장바구니 페이스 키링 200명 (총 400명)",
+        condition: "후보 슬로건 6개 중 1개 선택 후 성명·연락처·주소 입력. 로그인·본인인증 없음. 0원",
+        deadline: "2026-11-23T23:59",
+        announce: "2026-11-30 (심평원 블로그·개별 문자)",
+        url: "https://form.naver.com/response/FFikieVjqrK",
+        urlLabel: "투표 참여",
+        source: "건강보험심사평가원 공식 블로그(2026-11-16) → 네이버폼(11/23 확인)",
+        checked: "2026-11-23",
+        verified: true,
+        posted: "2026-11-23",
+        tip: "2분이면 끝나는 투표형 이벤트입니다. 선착순이 아니라 추첨이고 당첨자는 11월 중 문자로 쿠폰을 받습니다. 주소는 경품 발송용으로 받습니다."
+      },
+      {
+        id: "survey-ggtour-2026",
+        cat: "survey",
+        title: "2026년 경기관광 플랫폼 이용 만족도 조사 이벤트",
+        host: "경기관광공사",
+        benefit: "여기어때 상품권 5만원 50명 · 컴포즈커피 돌체라떼 500명 (총 550명)",
+        condition: "구글폼 설문 16문항 응답. 로그인·본인인증 없이 이름과 휴대폰만 입력. 0원",
+        deadline: "2026-12-06",
+        announce: "2026-12-09 (경기관광플랫폼 공지)",
+        url: "https://ggtour.or.kr/information/event/64383c1d-f83a-4984-bcf1-1a3b5d0cbbcd",
+        urlLabel: "설문 열기",
+        source: "경기관광플랫폼 이벤트 페이지 → '설문조사 참여하기' 구글폼(11/23 확인)",
+        checked: "2026-11-23",
+        verified: true,
+        posted: "2026-11-23",
+        tip: "하이GT나 플랫폼을 거의 쓰지 않았어도 '연 1~2회(거의 사용 안 함)'로 골라 16문항을 끝까지 응답할 수 있습니다. 1인 1회만 인정됩니다."
+      },
+      {
+        id: "survey-visitkorea-2026",
+        cat: "survey",
+        title: "2026 대한민국 구석구석 만족도 조사",
+        host: "한국관광공사 대한민국 구석구석",
+        benefit: "GS25 모바일상품권 3,000원 2,500명 · GS 결합상품권 2만원 40명 (총 2,540명)",
+        condition: "설문 페이지에서 만족도 조사 응답. 0원. 첫 문항에서 '오늘 처음 이용'을 고르면 조사 대상 제외로 종료",
+        deadline: "2026-11-30",
+        announce: "2026-12-07 (대한민국 구석구석 공지)",
+        url: "https://seolmoon.com/?6571A",
+        urlLabel: "설문 열기",
+        source: "대한민국 구석구석 이벤트 안내(11/23 확인) · 설문 첫 화면 직접 확인",
+        checked: "2026-11-23",
+        verified: true,
+        posted: "2026-11-23",
+        tip: "당첨 인원이 2,540명으로 아주 많지만, 첫 문항에서 '오늘 처음 이용'을 고르면 '조사 대상이 아닙니다' 안내와 함께 끝납니다. 사이트를 한두 번이라도 써 본 사람이 응답해야 합니다."
+      },
+      {
+        id: "survey-nps-quiz",
+        cat: "survey",
+        title: "국민연금공단·대한노인회 기초연금 온라인 간편신청 초성퀴즈",
+        host: "국민연금공단·대한노인회 중앙회",
+        benefit: "1만원 모바일 편의점·마트 상품권 400명 추첨",
+        condition: "안내 영상을 보고 초성퀴즈 정답 제출 + 인적사항 입력. 0원",
+        deadline: "2026-12-04",
+        announce: "2026-12-08 (대한노인회 중앙회 안내·개별 연락)",
+        url: "https://nps-event.taeris.co.kr/",
+        urlLabel: "퀴즈 참여",
+        source: "국민연금공단 보도자료(2026-11-20) · 이벤트 페이지 직접 확인",
+        checked: "2026-11-23",
+        verified: true,
+        posted: "2026-11-23",
+        target: "대한노인회 가입 회원·경로당 이용 어르신·소속 직원",
+        tip: "400명을 뽑는 큰 추첨이지만 참여 대상이 대한노인회 회원·경로당 이용 어르신·소속 직원으로 한정돼 있습니다."
+      },
       {
         id: "survey-kocef-2026",
         cat: "survey",
@@ -92,57 +161,6 @@
         verified: true,
         posted: "2026-11-22",
         tip: "정답은 영상 4분 53초부터 나오는 통계 이야기에 있습니다. 댓글은 반드시 유튜브 영상에 남겨야 하고, 공지 게시글 댓글로는 인정되지 않습니다."
-      },
-      {
-        id: "survey-rural6-convergence",
-        cat: "survey",
-        title: "2026년 농촌융복합산업 홈페이지 만족도조사",
-        host: "농림축산식품부·한국농어촌공사 농촌융복합산업",
-        benefit: "신세계상품권 4만 원 · 배달의민족 2만 원 · CU 1만 원 · GS25 5천 원 · 메가커피 2천 원 (총 250명 추첨)",
-        condition: "농촌융복합.com 방문자 누구나(첫 방문 선택 가능), 설문 2페이지·1인 1회. 0원",
-        deadline: "2026-11-22T24:00",
-        announce: "추첨 후 폼에 적은 번호로 발송",
-        url: "https://naver.me/5qLpFSQd",
-        urlLabel: "설문 열기",
-        source: "농촌융복합산업 이벤트 페이지(11/21 확인)",
-        checked: "2026-11-21",
-        verified: true,
-        posted: "2026-11-21",
-        tip: "경품이 250명으로 큰 편이고 첫 방문자도 응답할 수 있습니다. 방문 빈도에서 '첫 방문'을 고르면 이후 문항은 이용 경험 없이도 답할 수 있게 구성돼 있습니다."
-      },
-      {
-        id: "survey-hanyangdoseong-2026h2",
-        cat: "survey",
-        title: "2026년 하반기 서울 한양도성 누리집 이용자 만족도 조사",
-        host: "서울특별시 문화본부 문화유산과",
-        benefit: "메가MGC 아이스 메가리카노 모바일 쿠폰 (100명 추첨)",
-        condition: "서울한양도성 누리집 방문자 누구나, 7문항(객관식 6·주관식 1) + 휴대폰 번호. 0원",
-        deadline: "2026-11-22",
-        announce: "2026-11-26 (누리집 새소식)",
-        url: "https://m.site.naver.com/2k6kv",
-        urlLabel: "설문 열기",
-        source: "서울 한양도성 새소식(11/21 확인)",
-        checked: "2026-11-21",
-        verified: true,
-        posted: "2026-11-21",
-        tip: "설문 첫 화면에 경품 응모용 휴대폰 번호 입력 단계가 따로 있습니다. 번호를 넣지 않으면 설문은 제출되지만 추첨에서는 빠지고, 같은 번호는 1건만 인정됩니다."
-      },
-      {
-        id: "survey-bukgu-quiz-41",
-        cat: "survey",
-        title: "전남광주통합특별시 북구 제41회 정책퀴즈",
-        host: "전남광주통합특별시 북구",
-        benefit: "모바일 상품권 5,000원 (30명 추첨)",
-        condition: "주민·홈페이지 방문자 누구나, 3지선다 1문항 + 이름·휴대폰. 0원",
-        deadline: "2026-11-22T23:59",
-        announce: "매주 월요일 게시판 공지, 매월 초 문자 일괄 발송",
-        url: "https://bukgu.gwangju.kr/policyQuizForm.es?mid=a10202140100&pq_seq=286",
-        urlLabel: "퀴즈 참여",
-        source: "북구 홈페이지 정책퀴즈(11/21 확인)",
-        checked: "2026-11-21",
-        verified: true,
-        posted: "2026-11-21",
-        tip: "매주 월요일 새 문제가 올라오는 상시 이벤트입니다. 정답은 문제 아래 힌트에 링크된 북구 소식에서 확인할 수 있습니다."
       },
       {
         id: "survey-mois-local-regulation",
@@ -367,57 +385,6 @@
         tip: "의류는 사이즈 선택 항목이 있어 신청 전에 실측 표를 확인해 두면 선정 후 교환이 줄어듭니다."
       },
       {
-        id: "survey-kalit",
-        cat: "survey",
-        title: "2026년 공공기관 인지도조사",
-        host: "국토안전관리원",
-        benefit: "네이버페이 모바일상품권 5,000원 · 150명 추첨",
-        condition: "7단계 문항 전부 응답, 누구나 참여",
-        deadline: "2026-11-22",
-        announce: "발표 11월 말",
-        url: "https://docs.google.com/forms/d/e/1FAIpQLSccXsjQVhJ2QcIni8qExKxnAhWPwmHj_ldjvDSm-RMd26UBfw/viewform",
-        urlLabel: "설문 열기",
-        source: "국토안전관리원 구글폼",
-        checked: "2026-11-14",
-        verified: true,
-        posted: "2026-11-14",
-        tip: "7단계로 나뉜 선택형 문항입니다. 중간에 창을 닫으면 처음부터 다시 해야 하니 한 번에 끝내세요."
-      },
-      {
-        id: "survey-itstat",
-        cat: "survey",
-        title: "11월 퀴즈이벤트 — ICT 통계포털",
-        host: "정보통신정책연구원 ICT 통계포털",
-        benefit: "커피 기프티콘 · 100명",
-        condition: "사이트 검색 기능을 이용한 정답 입력, 성명·연락처·메일 제출",
-        deadline: "2026-11-22",
-        announce: "발표 11/25",
-        url: "https://www.itstat.go.kr/itstat/kor/event/EventList.html",
-        urlLabel: "이벤트 열기",
-        source: "ICT 통계포털 이벤트 게시판",
-        checked: "2026-11-15",
-        verified: true,
-        posted: "2026-11-15",
-        tip: "정답은 사이트의 상세검색 기간 옵션을 직접 열어 확인하면 됩니다. 뉴스레터 수신은 따로 신청하지 않아도 응모됩니다."
-      },
-      {
-        id: "survey-komsa",
-        cat: "survey",
-        title: "어선거래시스템 11월 퀴즈 이벤트",
-        host: "한국해양교통안전공단",
-        benefit: "다이소 모바일금액권 1만 원권 · 20명 추첨",
-        condition: "초성 힌트를 보고 정답 입력, 경로 선택",
-        deadline: "2026-11-22T23:59",
-        announce: "발표 11/26",
-        url: "https://form.naver.com/response/2wnnBoAUXQf",
-        urlLabel: "퀴즈 응모하기",
-        source: "한국해양교통안전공단 네이버폼",
-        checked: "2026-11-16",
-        verified: true,
-        posted: "2026-11-16",
-        tip: "공고에는 22일 마감으로 적혀 있고 폼은 23일 0시에 닫힙니다. 안전하게 22일 낮에 제출하세요."
-      },
-      {
         id: "survey-bigkinds",
         cat: "survey",
         title: "2026 이용자 설문조사 — 빅카인즈",
@@ -520,23 +487,6 @@
         tip: "‘저상 좌석버스’, ‘모두의 버스’는 제외 명칭입니다. 2027년부터 저상버스 도입이 의무화되는 배경을 이름에 담으면 심사에서 유리합니다."
       },
       {
-        id: "contest-pps",
-        cat: "contest",
-        title: "2026 조달청 AI 게임·콘텐츠 공모전",
-        host: "조달청",
-        benefit: "총 20점 · 총상금 550만 원 (대상 200만 원, 참가상 10점 각 5만 원)",
-        condition: "대한민국 국민 누구나(개인·팀), AI 게임·AI 시나리오·AI 영상 중 택1, 이메일 제출",
-        deadline: "2026-11-22",
-        announce: "공고 사이트 공지",
-        url: "https://blog.naver.com/ppspr/224440256164",
-        urlLabel: "공모요강 열기",
-        source: "조달청 공식 블로그 공고",
-        checked: "2026-11-17",
-        verified: true,
-        posted: "2026-10-12",
-        tip: "참가상이 10점(각 5만 원)이라 완성도보다 ‘일단 내는 것’이 남는 구조입니다. AI 시나리오는 단편(60분 미만)이면 됩니다."
-      },
-      {
         id: "survey-bojo-portal",
         cat: "survey",
         title: "보조금통합포털 만족도 설문조사",
@@ -590,24 +540,6 @@
         tip: "플랫폼 무료 회원가입 후 아이디를 정확히 입력해야 추첨 대상이 됩니다. 200명 추첨이라 기대값이 좋습니다."
       },
       {
-        id: "survey-liveseoul",
-        cat: "survey",
-        title: "2026년 라이브서울 만족도 조사",
-        host: "서울특별시",
-        benefit: "스타벅스 아메리카노 기프티콘 · 100명 추첨",
-        condition: "0원. 네이버폼 설문 제출 · 라이브서울 이용자 및 시민 누구나",
-        target: "라이브서울 시청자·시민",
-        deadline: "2026-11-22",
-        announce: "발표 11-26 · 라이브서울 누리집",
-        url: "https://naver.me/xxonvx3v",
-        urlLabel: "설문 참여하기",
-        source: "서울시 내 손안에 서울 이벤트(mediahub.seoul.go.kr)",
-        checked: "2026-11-17",
-        verified: true,
-        posted: "2026-11-17",
-        tip: "라이브서울(tv.seoul.go.kr)을 한 번 열어본 뒤 응답하면 사실대로 답할 수 있습니다."
-      },
-      {
         id: "survey-busan-simin",
         cat: "survey",
         title: "부산 시민열린마루 홈페이지 개선의견 이벤트",
@@ -642,40 +574,6 @@
         verified: true,
         posted: "2026-11-17",
         tip: "1인당 2만원으로 이번 목록에서 단가가 가장 높습니다. 고양 거주가 아니어도 '읽어본 사람'이 대상입니다."
-      },
-      {
-        id: "survey-gangwon-tongil",
-        cat: "survey",
-        title: "2026 연말 결산 & 2027 프로그램 설문조사",
-        host: "강원권통일플러스센터",
-        benefit: "다이소 모바일 상품권 5,000원 · 40명 추첨",
-        condition: "0원. 구글폼에 2026년 프로그램 의견·2027년 아이디어 작성 · 누구나",
-        deadline: "2026-11-22",
-        announce: "발표 11-24",
-        url: "https://forms.gle/Fsh6T6zqCejpZkdn7",
-        urlLabel: "설문 참여하기",
-        source: "주최 측 게시물 정리(콘테스트코리아) — 응모 전 원문 재확인",
-        checked: "2026-11-17",
-        verified: false,
-        posted: "2026-11-17",
-        tip: "주관 기관 프로그램을 한 번 둘러보고 아이디어를 적으면 정성 응답으로 인정될 가능성이 큽니다."
-      },
-      {
-        id: "survey-naacc",
-        cat: "survey",
-        title: "2026 만족도 이벤트",
-        host: "행정중심복합도시건설청",
-        benefit: "BBQ 황금올리브치킨+콜라(20명) · 네이버페이 1만원(10명) · 투썸 아메리카노(100명)",
-        condition: "0원. 네이버폼 설문 4단계(약 25문항) — 로그인·본인인증 없이 이름·연락처만 입력",
-        deadline: "2026-11-22",
-        announce: "발표 11-27",
-        url: "https://form.naver.com/response/L5s0Ca0tbcJ",
-        urlLabel: "설문 참여",
-        source: "행정중심복합도시건설청 네이버폼(11/20 확인)",
-        checked: "2026-11-20",
-        verified: true,
-        posted: "2026-11-17",
-        tip: "설문만 해도 투썸 100명, 정성 의견을 쓰면 BBQ·네이버페이까지 노릴 수 있습니다."
       },
       {
         id: "survey-nhis-healthmoa",
@@ -748,23 +646,6 @@
         verified: false,
         posted: "2026-11-17",
         tip: "SNS 구독과 인증샷 첨부가 조건인 경우가 많습니다. 폼 첫 화면에서 조건을 먼저 확인하세요."
-      },
-      {
-        id: "survey-kamco-vote",
-        cat: "survey",
-        title: "2026 성과공유회 우수사례(Best Practice) 대국민 투표",
-        host: "한국자산관리공사(캠코)",
-        benefit: "커피 기프티콘 · 300명 추첨",
-        condition: "0원. 경영관리·주요사업 부문에서 각 3건 선택 + 휴대전화번호만 입력 (로그인 없음)",
-        deadline: "2026-11-23T00:00",
-        announce: "12월 중 개별 발송",
-        url: "https://form.naver.com/response/E6Xx2J8d12B",
-        urlLabel: "투표 참여",
-        source: "캠코 공지사항 29408 (11/20 재확인)",
-        checked: "2026-11-20",
-        verified: true,
-        posted: "2026-11-20",
-        tip: "두 부문에서 3건씩 고르는 1분 투표입니다. 보도자료에는 11/22까지로 적혀 있어 하루 먼저 마감될 수 있으니 오늘 넣어 두세요."
       },
       {
         id: "survey-ethics-truth",
